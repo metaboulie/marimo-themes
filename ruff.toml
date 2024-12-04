@@ -1,4 +1,4 @@
-exclude = ["tests"]
+exclude = ["tests", "sample.py"]
 
 # Support Python 3.9+.
 target-version = "py39"
