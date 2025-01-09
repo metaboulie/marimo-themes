@@ -64,14 +64,11 @@ motheme apply -r coldme ./
 >
 > You may want to run `motheme clear -r ./` before sharing or uploading your
 > notebooks because the field `css_file` in `marimo.App()` may leak your
-> private data.
+> private data
 
-You can also add `motheme` as a uv tool
+You can also run `motheme` as a uv tool
 
 ```bash
-# install motheme as a uv tool
-uv tool install motheme
-
 # use motheme
 uvx motheme <command>
 ```
@@ -86,11 +83,11 @@ theming with or without motheme
 
 - **Requirements**: Ensure you are using Marimo version **0.9.14** or higher.
   It is recommended to keep your Marimo version up-to-date for the best
-  experience.
+  experience
 
 - **Light and Dark Mode Support**: All themes support both light and dark modes
   and will switch automatically based on your notebook's current theme
-  settings.
+  settings
 
 ## Contributing
 
@@ -101,13 +98,13 @@ To contribute your own themes, please follow these guidelines:
 - **Refer to Default Arguments**: All available arguments are listed in
   [`default.css`](themes/default/default.css), which serves as a reference for
   writing your themes. You can experiment with other arguments, but please note
-  that stability cannot be guaranteed with untested changes.
+  that stability cannot be guaranteed with untested changes
 
 - **Light and Dark Themes**: Implement both light and dark themes using the
   light-dark syntax as demonstrated in `default.css`. If you choose not to
   implement a theme for a specific mode, name your theme as `xxx_light` or
   `xxx_dark` and use the default values for the respective mode from
-  `default.css`.
+  `default.css`
 
 - **Folder Structure**: After finishing your CSS file, create a new folder
   inside `themes` with the name of your theme. Within this folder, upload the
