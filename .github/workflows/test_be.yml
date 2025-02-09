@@ -1,8 +1,6 @@
 name: Test BE
 
 on:
-    push:
-        branches: [main]
     pull_request:
 
 # Add permissions for the entire workflow
