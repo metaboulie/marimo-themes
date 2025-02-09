@@ -1,18 +1,14 @@
 name: Test BE
 
 on:
-    push:
-        branches: [main]
     pull_request:
 
-jobs:
-    checks:
-        runs-on: ubuntu-latest
-        permissions:
-            contents: write
-            pull-requests: write
-            checks: write
+# Add permissions for the entire workflow
+permissions:
+    contents: write
+    pull-requests: write
 
+jobs:
     changes:
         runs-on: ubuntu-latest
         outputs:
@@ -52,6 +48,10 @@ jobs:
 
             - name: 🥚 Install Hatch
               uses: pypa/hatch@install
+
+            - name: Install Dev Dependencies
+              if: ${{ matrix.python-version == '3.12' }}
+              run: pip install .[dev]
 
             - name: Format
               if: ${{ matrix.python-version == '3.12' }}
