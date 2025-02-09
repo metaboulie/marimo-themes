@@ -6,13 +6,6 @@ on:
     pull_request:
 
 jobs:
-    checks:
-        runs-on: ubuntu-latest
-        permissions:
-            contents: write
-            pull-requests: write
-            checks: write
-
     changes:
         runs-on: ubuntu-latest
         outputs:
