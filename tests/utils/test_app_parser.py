@@ -1,8 +1,16 @@
-from motheme.app_parser import AppBlock, find_app_block, update_file_content
+"""Tests for the app_parser module."""
+
+
+from motheme.utils.app_parser import (
+    AppBlock,
+    find_app_block,
+    update_file_content,
+)
 
 
 def test_find_app_block_single_line() -> None:
-    content = [
+    """Test finding a single-line app block."""
+    content: list[str] = [
         "import marimo",
         "app = marimo.App(width=800)",
         "app.run()",
@@ -16,7 +24,8 @@ def test_find_app_block_single_line() -> None:
 
 
 def test_find_app_block_multi_line() -> None:
-    content = [
+    """Test finding a multi-line app block."""
+    content: list[str] = [
         "import marimo",
         "app = marimo.App(",
         "    width=800,",
@@ -33,7 +42,8 @@ def test_find_app_block_multi_line() -> None:
 
 
 def test_find_app_block_nested_parentheses() -> None:
-    content = [
+    """Test finding an app block with nested parentheses."""
+    content: list[str] = [
         "app = marimo.App(",
         "    width=get_width(800),",
         "    height=calc_height((600 + 200) * 2)",
@@ -48,8 +58,27 @@ def test_find_app_block_nested_parentheses() -> None:
     assert result.content == "".join(content)
 
 
+def test_find_app_block_with_complex_args() -> None:
+    """Test finding an app block with complex arguments."""
+    content: list[str] = [
+        "app = marimo.App(",
+        "    title=get_title('test'),",
+        "    plugins=[plugin1(), plugin2()]",
+        "    description='A test app'",
+        ")",
+    ]
+    result = find_app_block(content)
+
+    assert result is not None
+    assert result.start_line == 0
+    assert result.end_line == 4
+    assert "title=get_title('test')" in result.content
+    assert "plugins=[plugin1(), plugin2()]" in result.content
+
+
 def test_find_app_block_no_app() -> None:
-    content = [
+    """Test when no app block is present."""
+    content: list[str] = [
         "import marimo",
         "x = 42",
         "print('Hello')",
@@ -60,14 +89,16 @@ def test_find_app_block_no_app() -> None:
 
 
 def test_find_app_block_empty_file() -> None:
-    content = []
+    """Test finding app block in an empty file."""
+    content: list[str] = []
     result = find_app_block(content)
 
     assert result is None
 
 
 def test_update_file_content_single_line() -> None:
-    content = [
+    """Test updating file content when app block is a single line."""
+    content: list[str] = [
         "import marimo",
         "app = marimo.App(width=800)",
         "app.run()",
@@ -86,7 +117,8 @@ def test_update_file_content_single_line() -> None:
 
 
 def test_update_file_content_multi_line() -> None:
-    content = [
+    """Test updating file content when app block spans multiple lines."""
+    content: list[str] = [
         "import marimo",
         "app = marimo.App(",
         "    width=800,",
@@ -110,7 +142,8 @@ def test_update_file_content_multi_line() -> None:
 
 
 def test_update_file_content_at_start() -> None:
-    content = [
+    """Test updating file content when app block is at the start of file."""
+    content: list[str] = [
         "app = marimo.App(width=800)",
         "app.run()",
     ]
@@ -127,7 +160,8 @@ def test_update_file_content_at_start() -> None:
 
 
 def test_update_file_content_at_end() -> None:
-    content = [
+    """Test updating file content when app block is at the end of file."""
+    content: list[str] = [
         "import marimo",
         "app = marimo.App(width=800)",
     ]
