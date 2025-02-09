@@ -4,7 +4,12 @@ from motheme.apply_theme import modify_app_line
 
 
 @pytest.fixture
-def sample_css_path():
+def sample_css_path() -> Path:
+    """Provide a sample CSS file path for testing.
+
+    Returns:
+        Path: A Windows-style path for testing path conversion.
+    """
     return Path("C:/themes/new.css")
 
 
