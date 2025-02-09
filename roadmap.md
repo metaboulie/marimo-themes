@@ -50,3 +50,7 @@
 # new themes
 
 # a notebook for creating themes
+
+# github
+
+- [ ] add test to valid css file
