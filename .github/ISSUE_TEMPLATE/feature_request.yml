@@ -1,0 +1,78 @@
+name: Feature Request
+description: Suggest a new feature for motheme
+title: "feat: "
+labels: ["enhancement"]
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Thanks for suggesting a new feature! Please fill out the details below.
+
+    - type: textarea
+      id: problem
+      attributes:
+          label: Problem Description
+          description: What problem does this feature solve? Please describe.
+          placeholder: |
+              - Is your feature request related to a problem?
+              - What would you like to be able to do?
+              - What's the current workaround, if any?
+      validations:
+          required: true
+
+    - type: textarea
+      id: solution
+      attributes:
+          label: Proposed Solution
+          description: Describe the solution you'd like to see
+          placeholder: |
+              - How should this feature work?
+              - What commands/options would be needed?
+              - What would the user experience be like?
+      validations:
+          required: true
+
+    - type: dropdown
+      id: scope
+      attributes:
+          label: Feature Scope
+          description: What area of motheme does this feature affect?
+          options:
+              - Theme Management
+              - CLI Interface
+              - File Handling
+              - Documentation
+              - Performance
+              - Other
+      validations:
+          required: true
+
+    - type: checkboxes
+      id: considerations
+      attributes:
+          label: Implementation Considerations
+          description: Please check all that apply
+          options:
+              - label: Requires new dependencies
+              - label: Needs file system access
+              - label: Affects theme compatibility
+              - label: Requires documentation updates
+              - label: Backwards compatible
+              - label: Breaking change
+
+    - type: textarea
+      id: alternatives
+      attributes:
+          label: Alternative Solutions
+          description: Describe any alternative solutions you've considered
+          placeholder: |
+              - What other approaches could solve this?
+              - Why is your proposed solution better?
+
+    - type: textarea
+      id: additional-context
+      attributes:
+          label: Additional Context
+          description:
+              Add any other context, screenshots, or examples about the feature
+              request

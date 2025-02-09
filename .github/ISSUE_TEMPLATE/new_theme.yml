@@ -1,0 +1,88 @@
+name: New Theme Proposal
+description: Propose a new theme for motheme
+title: "theme: "
+labels: ["enhancement", "theme"]
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Thanks for proposing a new theme! Please fill out the details below.
+
+    - type: input
+      id: theme-name
+      attributes:
+          label: Theme Name
+          description: What should the theme be called?
+          placeholder: "e.g., coldme, wigwam, nord"
+      validations:
+          required: true
+
+    - type: textarea
+      id: theme-description
+      attributes:
+          label: Theme Description
+          description: Describe the visual style and mood of your theme
+          placeholder: |
+              - What's the overall aesthetic?
+              - What inspired this theme?
+              - What use cases is it best suited for?
+      validations:
+          required: true
+
+    - type: textarea
+      id: font-choices
+      attributes:
+          label: Font Choices
+          description: Specify the fonts you plan to use
+          placeholder: |
+              - Monospace font: (e.g., "Fira Code", "JetBrains Mono")
+              - Text font: (e.g., "Merriweather", "Space Grotesk")
+              - Heading font: (e.g., "Lora", "Space Grotesk")
+      validations:
+          required: true
+
+    - type: textarea
+      id: color-scheme
+      attributes:
+          label: Color Scheme
+          description: Describe your light and dark mode color choices
+          placeholder: |
+              Light Mode:
+              - Background: #e6ffe9
+              - Foreground: #1f3026
+              - Accent: #4a7c94
+
+              Dark Mode:
+              - Background: #0b1e26
+              - Foreground: #b4ffff
+              - Accent: #73d9e0
+      validations:
+          required: true
+
+    - type: checkboxes
+      id: theme-requirements
+      attributes:
+          label: Theme Requirements
+          description: Please confirm the following
+          options:
+              - label: Theme supports both light and dark modes
+              - label: All colors have sufficient contrast ratios
+              - label: Fonts are freely available (e.g., Google Fonts)
+              - label: Theme follows the structure in default.css
+              - label: Theme has been tested with sample.py
+
+    - type: textarea
+      id: preview-images
+      attributes:
+          label: Preview Images
+          description:
+              If available, provide links to preview images of your theme
+          placeholder: |
+              - Light mode screenshot: [link]
+              - Dark mode screenshot: [link]
+
+    - type: textarea
+      id: additional-context
+      attributes:
+          label: Additional Context
+          description: Any other context or notes about the theme

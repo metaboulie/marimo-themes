@@ -1,0 +1,102 @@
+name: Bug Report
+description: Report a bug in motheme
+title: "bug: "
+labels: ["bug"]
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Thanks for taking the time to fill out this bug report!
+
+    - type: input
+      id: version
+      attributes:
+          label: Version
+          description: What version of motheme are you running?
+          placeholder: "e.g., 0.1.5"
+      validations:
+          required: true
+
+    - type: input
+      id: python-version
+      attributes:
+          label: Python Version
+          description: What version of Python are you using?
+          placeholder: "e.g., 3.9.12"
+      validations:
+          required: true
+
+    - type: input
+      id: marimo-version
+      attributes:
+          label: Marimo Version
+          description: What version of Marimo are you using?
+          placeholder: "e.g., 0.9.14"
+      validations:
+          required: true
+
+    - type: textarea
+      id: what-happened
+      attributes:
+          label: What happened?
+          description: Also tell us, what did you expect to happen?
+          placeholder: |
+              1. Run command '...'
+              2. See error '...'
+              3. Expected behavior was '...'
+      validations:
+          required: true
+
+    - type: textarea
+      id: command
+      attributes:
+          label: Command Used
+          description: What command did you run?
+          placeholder: |
+              e.g., motheme apply -r coldme ./
+              or
+              e.g., motheme create default mytheme
+          render: shell
+
+    - type: textarea
+      id: logs
+      attributes:
+          label: Relevant log output
+          description:
+              Please copy and paste any relevant log output. This will be
+              automatically formatted.
+          render: shell
+
+    - type: dropdown
+      id: os
+      attributes:
+          label: Operating System
+          options:
+              - Linux
+              - macOS
+              - Windows
+      validations:
+          required: true
+
+    - type: textarea
+      id: notebook-content
+      attributes:
+          label: Notebook Content
+          description:
+              If applicable, share the minimal notebook content that reproduces
+              the issue
+          render: python
+
+    - type: checkboxes
+      id: validation
+      attributes:
+          label: Validation
+          description: Before submitting the issue, please verify that
+          options:
+              - label: This bug is reproducible with the latest version
+              - label:
+                    I have checked that this issue has not already been
+                    reported
+              - label:
+                    I have included all relevant configuration files (if
+                    applicable)

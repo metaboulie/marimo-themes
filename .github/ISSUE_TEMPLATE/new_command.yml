@@ -1,0 +1,69 @@
+name: New Command Proposal
+description: Propose a new command for motheme CLI
+title: "cmd: "
+labels: ["enhancement", "command"]
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Thanks for proposing a new command! Please fill out the details below.
+
+    - type: input
+      id: command-name
+      attributes:
+          label: Command Name
+          description: What should the command be called?
+          placeholder: "e.g., preview, validate, random"
+      validations:
+          required: true
+
+    - type: textarea
+      id: command-description
+      attributes:
+          label: Command Description
+          description: Describe what this command should do
+          placeholder: "e.g., Show a preview of a theme before applying it"
+      validations:
+          required: true
+
+    - type: textarea
+      id: command-args
+      attributes:
+          label: Command Arguments
+          description: List the arguments this command should accept
+          placeholder: |
+              - theme_name: Name of the theme to preview
+              - --output-format: Format of preview (text/image)
+      validations:
+          required: true
+
+    - type: textarea
+      id: implementation-details
+      attributes:
+          label: Implementation Details
+          description:
+              Any specific technical details or considerations for
+              implementation
+          placeholder: |
+              - How should the command handle errors?
+              - Any dependencies required?
+              - Special file handling needed?
+
+    - type: checkboxes
+      id: considerations
+      attributes:
+          label: Implementation Considerations
+          description: Please check all that apply
+          options:
+              - label: Command follows existing CLI pattern
+              - label: Compatible with both light/dark themes
+              - label: Requires new dependencies
+              - label: Needs file system access
+              - label: Requires GitHub API interaction
+
+    - type: textarea
+      id: additional-context
+      attributes:
+          label: Additional Context
+          description:
+              Any other context or screenshots about the command request

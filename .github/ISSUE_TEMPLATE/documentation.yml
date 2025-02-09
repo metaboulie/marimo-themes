@@ -1,0 +1,57 @@
+name: Documentation Update
+description: Suggest an update or addition to the documentation
+title: "docs: "
+labels: ["documentation"]
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Thanks for helping improve our documentation! Please fill out the details below.
+
+    - type: input
+      id: section
+      attributes:
+          label: Documentation Section
+          description: Which section of the documentation needs updating?
+          placeholder: "e.g., Installation, Usage, CLI Commands"
+      validations:
+          required: true
+
+    - type: textarea
+      id: current-content
+      attributes:
+          label: Current Content
+          description: What is the current content (if applicable)?
+          placeholder: "Copy and paste the current content here"
+
+    - type: textarea
+      id: proposed-changes
+      attributes:
+          label: Proposed Changes
+          description: Describe the changes you would like to see
+          placeholder: |
+              - What should be added, removed, or updated?
+              - Why is this change necessary?
+      validations:
+          required: true
+
+    - type: textarea
+      id: additional-context
+      attributes:
+          label: Additional Context
+          description:
+              Add any other context, screenshots, or examples about the
+              documentation update
+
+    - type: checkboxes
+      id: validation
+      attributes:
+          label: Validation
+          description: Before submitting the issue, please verify that
+          options:
+              - label:
+                    I have checked that this issue has not already been
+                    reported
+              - label:
+                    I have included all relevant details for the proposed
+                    changes
