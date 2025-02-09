@@ -46,6 +46,10 @@ jobs:
             - name: 🥚 Install Hatch
               uses: pypa/hatch@install
 
+            - name: Install Dev Dependencies
+              if: ${{ matrix.python-version == '3.12' }}
+              run: pip install .[dev]
+
             - name: Format
               if: ${{ matrix.python-version == '3.12' }}
               run: hatch run format
