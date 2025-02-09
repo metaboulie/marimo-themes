@@ -7,11 +7,24 @@ from dataclasses import dataclass
 
 @dataclass
 class AppBlock:
-    """Represents a marimo.App block in a notebook file."""
+    """
+    Represents a marimo.App block in a notebook file.
+
+    An example of an App block is:
+
+    ```python
+    app = marimo.App(
+        css_file="path/to/theme.css",
+    )
+    ```
+    """
 
     start_line: int
+    """The line number of the first line of the App block."""
     end_line: int
+    """The line number of the last line of the App block."""
     content: str
+    """The content of the App block."""
 
 
 def find_app_block(content: list[str]) -> AppBlock | None:

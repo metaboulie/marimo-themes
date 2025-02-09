@@ -2,7 +2,7 @@
 
 from shutil import copyfile
 
-from motheme.util import get_themes_dir, validate_theme_exists
+from motheme.utils import get_themes_dir, validate_theme_exists
 
 
 def create_theme(ref_theme_name: str, theme_name: str) -> None:

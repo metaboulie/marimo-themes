@@ -2,15 +2,17 @@
 
 import arguably
 
-from motheme.apply_theme import apply_theme
-from motheme.clear_theme import clear_theme
-from motheme.create_theme import create_theme
-from motheme.current_theme import current_theme
-from motheme.list_themes import list_themes
-from motheme.remove_theme import remove_theme_files
-from motheme.theme_downloader import download_themes
-from motheme.util import (
+from motheme.operations import (
+    apply_theme,
+    clear_theme,
+    create_theme,
+    current_theme,
+    list_theme,
+    remove_theme_files,
+)
+from motheme.utils import (
     check_files_provided,
+    download_themes,
     expand_files,
     quiet_mode,
 )
@@ -25,7 +27,7 @@ def update() -> None:
 @arguably.command
 def themes() -> None:
     """List available Marimo themes."""
-    list_themes()
+    list_theme()
 
 
 @arguably.command

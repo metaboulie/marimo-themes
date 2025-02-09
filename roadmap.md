@@ -26,10 +26,6 @@
 
 # improvements
 
-- [ ] `motheme` stores custom css files in the following folder:
-
-XDG directory (~/.config/marimo/motheme or $XDG_CONFIG_HOME/marimo/motheme)
-
 - [ ] add custom css path and html head path to `marimo.toml`
 
 # docs
@@ -54,3 +50,7 @@ XDG directory (~/.config/marimo/motheme or $XDG_CONFIG_HOME/marimo/motheme)
 # new themes
 
 # a notebook for creating themes
+
+# github
+
+- [ ] add test to valid css file
