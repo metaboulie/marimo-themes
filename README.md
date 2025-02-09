@@ -1,6 +1,6 @@
 # Marimo Custom Themes
 
-> personalize your experience with [marimo](https://github.com/marimo-team/marimo)
+> Personalize your experience with [marimo](https://github.com/marimo-team/marimo)
 
 ## Theme Gallery
 
@@ -76,11 +76,3 @@ uvx motheme <command>
 If you are using marimo in a browser like Firefox, you can use tools like
 [Dark Reader](https://addons.mozilla.org/en-US/firefox/addon/darkreader/) for theming
 with or without motheme
-
-## Usage
-
--   **Requirements**: Ensure you are using Marimo version **0.9.14** or higher. It is
-    recommended to keep your Marimo version up-to-date for the best experience
-
--   **Light and Dark Mode Support**: All themes support both light and dark modes and
-    will switch automatically based on your notebook's current theme settings
