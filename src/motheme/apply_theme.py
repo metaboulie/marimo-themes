@@ -11,6 +11,7 @@ from .util import get_themes_dir, validate_theme_exists
 @lru_cache(maxsize=128)
 def modify_app_line(line: str, css_file_path: Path) -> str:
     """Modify a marimo.App line to include or update the css_file parameter."""
+    css_file_path = css_file_path.as_posix()
     if "css_file=" in line:
         # Replace existing css_file parameter
         return re.sub(

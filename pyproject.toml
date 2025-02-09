@@ -38,4 +38,4 @@ packages = ["src/motheme"]
 installer = "uv"
 
 [dependency-groups]
-dev = ["hatch>=1.13.0", "marimo>=0.9.14", "ruff>=0.7.1"]
+dev = ["hatch>=1.13.0", "marimo>=0.9.14", "pytest>=8.3.4", "ruff>=0.7.1"]
