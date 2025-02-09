@@ -57,7 +57,7 @@ motheme apply -r coldme ./
 > [!NOTE]
 >
 > Please note that some parts of the Marimo notebook are not fully exposed for
-> customization at this time. This includes side panels and cell editors
+> customization at this time, including side panels and cell editors
 
 > [!WARNING]
 >
