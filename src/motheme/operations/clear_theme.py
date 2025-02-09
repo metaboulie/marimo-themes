@@ -4,7 +4,7 @@ import re
 from functools import lru_cache
 from pathlib import Path
 
-from .app_parser import find_app_block, update_file_content
+from motheme.utils import find_app_block, update_file_content
 
 
 @lru_cache(maxsize=128)
@@ -26,7 +26,12 @@ def clean_app_line(line: str) -> str:
     # Clean up any potential double commas or empty parentheses
     new_line = re.sub(r",\s*,", ",", new_line)
     new_line = re.sub(r"\(\s*,", "(", new_line)
-    return re.sub(r",\s*\)", ")", new_line)
+    new_line = re.sub(r",\s*\)", ")", new_line)
+
+    # Clean up any extra spaces between parentheses and parameters
+    new_line = re.sub(r"\(\s+", "(", new_line)
+    new_line = re.sub(r"\s+\)", ")", new_line)
+    return re.sub(r"\s*,\s*", ", ", new_line)  # Normalize spaces around commas
 
 
 def process_file(file_name: str) -> tuple[bool, list[str]]:
@@ -87,8 +92,7 @@ def clear_theme(files: list[str]) -> None:
     # Summary
     if modified_files:
         print(
-            f"\nSuccessfully cleared theme from "
-            f"{len(modified_files)} file(s)."
+            f"\nSuccessfully cleared theme from {len(modified_files)} file(s)."
         )
     else:
         print("No files were modified.")
