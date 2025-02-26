@@ -1,0 +1,73 @@
+name: Test BE
+
+on:
+    pull_request:
+
+# Add permissions for the entire workflow
+permissions:
+    contents: write
+    pull-requests: write
+
+jobs:
+    changes:
+        runs-on: ubuntu-latest
+        outputs:
+            backend: ${{ steps.filter.outputs.backend }}
+        steps:
+            - uses: actions/checkout@v4
+            - uses: dorny/paths-filter@v3
+              id: filter
+              with:
+                  filters: |
+                      backend:
+                        - 'src/**'
+                        - 'tests/**'
+                        - 'pyproject.toml'
+
+    test_python:
+        needs: changes
+        if: ${{ needs.changes.outputs.backend == 'true' }}
+        name: ${{ matrix.os }} / Py ${{ matrix.python-version }}
+        runs-on: ${{ matrix.os }}
+        timeout-minutes: 15
+        defaults:
+            run:
+                shell: bash
+
+        strategy:
+            matrix:
+                os: [ubuntu-latest, macos-latest, windows-latest]
+                python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        steps:
+            - name: 🛑 Cancel Previous Runs
+              uses: styfle/cancel-workflow-action@0.12.1
+
+            - uses: actions/checkout@v4
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: 🥚 Install Hatch
+              uses: pypa/hatch@install
+
+            - name: Install Dev Dependencies
+              if: ${{ matrix.python-version == '3.12' }}
+              run: pip install .[dev]
+
+            - name: Format
+              if: ${{ matrix.python-version == '3.12' }}
+              run: hatch run format
+
+            - name: Lint
+              if: ${{ matrix.python-version == '3.12' }}
+              run: hatch run lint
+
+            - name: Run Tests
+              run: hatch run test:test
+
+            - name: Commit formatting changes
+              if: success()
+              run: |
+                  git config --global user.name "github-actions[bot]"
+                  git config --global user.email "github-actions[bot]@users.noreply.github.com"
+                  git commit -am "style: format with ruff" || true
+                  git push
