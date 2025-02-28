@@ -1,6 +1,13 @@
 # Marimo Custom Themes
 
-> Personalize your experience with [marimo](https://github.com/marimo-team/marimo)
+> [!NOTE]
+>
+> Some parts of the Marimo notebook are not fully exposed for customization at this time
+
+> [!WARNING]
+>
+> You may want to run `motheme clear -r ./` before sharing or uploading your notebooks
+> because the field `css_file` in `marimo.App()` may leak your private data
 
 ## Theme Gallery
 
@@ -94,13 +101,3 @@ motheme apply -r coldme ./
 </table>
 
 </div>
-
-> [!NOTE]
->
-> Please note that some parts of the Marimo notebook are not fully exposed for
-> customization at this time, including side panels and cell editors
-
-> [!WARNING]
->
-> You may want to run `motheme clear -r ./` before sharing or uploading your notebooks
-> because the field `css_file` in `marimo.App()` may leak your private data
