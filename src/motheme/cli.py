@@ -47,7 +47,7 @@ def apply(
         recursive: [-r] If True, recursively search directories for
             Marimo notebooks
         quiet: [-q] If True, suppress output
-        git_ignore: [-i] If True, ignore files that are git ignored
+        git_ignore: [-i] If True, ignore files that are not tracked by git
 
     """
     if not check_files_provided("apply the theme", files):
@@ -75,7 +75,7 @@ def clear(
         recursive: [-r] If True, recursively search directories for
             Marimo notebooks
         quiet: [-q] If True, suppress output
-        git_ignore: [-i] If True, ignore files that are git ignored
+        git_ignore: [-i] If True, ignore files that are not tracked by git
 
     """
     if not check_files_provided("clear themes from", files):
@@ -102,7 +102,7 @@ def current(
         recursive: [-r] If True, recursively search directories for
             Marimo notebooks
         quiet: [-q] If True, suppress output
-        git_ignore: [-i] If True, ignore files that are git ignored
+        git_ignore: [-i] If True, ignore files that are not tracked by git
 
     """
     if not check_files_provided("check themes for", files):
