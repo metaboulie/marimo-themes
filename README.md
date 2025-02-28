@@ -11,13 +11,6 @@
     <img src="themes/coldme/coldme_dark.png" alt="coldme dark" width="400"/>
 </div>
 
-### <a href="themes/nord/">nord</a>
-
-<div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-    <img src="themes/nord/nord_light.png" alt="nord light" width="400" "/>
-    <img src="themes/nord/nord_dark.png" alt="nord dark" width="400"/>
-</div>
-
 ### <a href="themes/mininini/">mininini</a>
 
 <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
