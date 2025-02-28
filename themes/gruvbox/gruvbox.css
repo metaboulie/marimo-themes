@@ -1,0 +1,106 @@
+/* Gruvbox Theme for Marimo */
+/* Based on Radix colors: https://github.com/radix-ui/colors */
+
+/* Font and Radius Variables */
+:root {
+    --monospace-font: var(--marimo-monospace-font, "Iosevka Nerd Font", monospace);
+    --text-font: var(--marimo-text-font, "Iosevka Nerd Font", sans-serif);
+    --heading-font: var(--marimo-heading-font, "Iosevka Nerd Font", serif);
+    --radius: 6px;
+}
+
+/* Base colors */
+:root {
+    --gb-dark0-hard: #1d2021;
+    --gb-dark0: #282828;
+    --gb-dark0-soft: #32302f;
+    --gb-dark1: #3c3836;
+    --gb-dark2: #504945;
+    --gb-dark3: #665c54;
+    --gb-dark4: #7c6f64;
+
+    --gb-light0-hard: #f9f5d7;
+    --gb-light0: #fbf1c7;
+    --gb-light0-soft: #f2e5bc;
+    --gb-light1: #ebdbb2;
+    --gb-light2: #d5c4a1;
+    --gb-light3: #bdae93;
+    --gb-light4: #a89984;
+
+    --gb-bright-red: #fb4934;
+    --gb-bright-green: #b8bb26;
+    --gb-bright-yellow: #fabd2f;
+    --gb-bright-blue: #83a598;
+    --gb-bright-purple: #d3869b;
+    --gb-bright-aqua: #8ec07c;
+    --gb-bright-orange: #fe8019;
+
+    --gb-neutral-red: #cc241d;
+    --gb-neutral-green: #98971a;
+    --gb-neutral-yellow: #d79921;
+    --gb-neutral-blue: #458588;
+    --gb-neutral-purple: #b16286;
+    --gb-neutral-aqua: #689d6a;
+    --gb-neutral-orange: #d65d0e;
+
+    --gb-faded-red: #9d0006;
+    --gb-faded-green: #79740e;
+    --gb-faded-yellow: #b57614;
+    --gb-faded-blue: #076678;
+    --gb-faded-purple: #8f3f71;
+    --gb-faded-aqua: #427b58;
+    --gb-faded-orange: #af3a03;
+
+    --background: light-dark(var(--gb-light0), var(--gb-dark0));
+    --foreground: light-dark(var(--gb-dark1), var(--gb-light1));
+    --muted: light-dark(var(--gb-light1), var(--gb-dark1));
+    --muted-foreground: light-dark(var(--gb-dark3), var(--gb-light3));
+
+    --popover: light-dark(var(--gb-light0-soft), var(--gb-dark0-soft));
+    --popover-foreground: light-dark(var(--gb-dark1), var(--gb-light1));
+
+    --card: light-dark(var(--gb-light0-soft), var(--gb-dark1));
+    --card-foreground: light-dark(var(--gb-dark1), var(--gb-light1));
+
+    --border: light-dark(var(--gb-light3), var(--gb-dark3));
+    --input: light-dark(var(--gb-light4), var(--gb-dark3));
+
+    --primary: light-dark(var(--gb-neutral-blue), var(--gb-bright-blue));
+    --primary-foreground: light-dark(var(--gb-light0), var(--gb-dark0));
+
+    --secondary: light-dark(var(--gb-light1), var(--gb-dark2));
+    --secondary-foreground: light-dark(var(--gb-dark0), var(--gb-light0));
+
+    --accent: light-dark(var(--gb-neutral-aqua), var(--gb-bright-aqua));
+    --accent-foreground: light-dark(var(--gb-dark0), var(--gb-light0));
+
+    --ring: light-dark(var(--gb-neutral-yellow), var(--gb-bright-yellow));
+}
+
+/* Semantic colors */
+:root {
+    --destructive: var(--gb-bright-red);
+    --destructive-foreground: light-dark(var(--gb-light0), var(--gb-dark0));
+
+    --error: var(--gb-neutral-red);
+    --error-foreground: light-dark(var(--gb-light0), var(--gb-dark0));
+
+    --success: var(--gb-bright-green);
+    --success-foreground: light-dark(var(--gb-dark0), var(--gb-light0));
+
+    --action: var(--gb-bright-yellow);
+    --action-hover: var(--gb-neutral-yellow);
+    --action-foreground: light-dark(var(--gb-dark0-hard), var(--gb-light0-hard));
+
+    --link: light-dark(var(--gb-faded-blue), var(--gb-bright-blue));
+    --link-visited: light-dark(var(--gb-faded-purple), var(--gb-bright-purple));
+
+    --stale: light-dark(hsla(40, 70%, 50%, 0.25), hsla(40, 70%, 50%, 0.25));
+}
+
+/* Base shadows */
+:root {
+    --base-shadow: light-dark(hsla(40, 30%, 40%, 0.3), hsla(40, 20%, 10%, 0.5));
+    --base-shadow-darker: light-dark(hsla(40, 30%, 30%, 0.4), hsla(40, 20%, 5%, 0.6));
+    --base-shadow-opacity: 8%;
+}
