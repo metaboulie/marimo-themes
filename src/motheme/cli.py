@@ -41,7 +41,6 @@ def apply(
     """
     Apply a Marimo theme to specified notebook files.
 
-
     Args:
         theme_name: Name of the theme to apply
         files: Tuple of file/directory paths
