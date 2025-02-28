@@ -4,10 +4,35 @@
 
 ## Theme Gallery
 
-<div align="center">
-<div align="center" style="display: flex; justify-content: center; gap: 20px; margin-bottom: 30px;"> <img src="themes/coldme/coldme_light.png" alt="coldme light" width="45%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /> <img src="themes/coldme/coldme_dark.png" alt="coldme dark" width="45%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /> </div>
-<div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 30px;"> <img src="themes/mininini/mininini_light.png" alt="mininini light" width="45%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /> <img src="themes/mininini/mininini_dark.png" alt="mininini dark" width="45%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /> </div>
-<div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 30px;"> <img src="themes/wigwam/wigwam_light.png" alt="wigwam light" width="45%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /> <img src="themes/wigwam/wigwam_dark.png" alt="wigwam dark" width="45%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /> </div> </div>
+<div align="center" style="display: flex; justify-content: center; gap: 20px; margin: 20px 0;"> 
+    
+<table>
+  <tr>
+    <td>
+
+<h3 style="text-align: center; margin-top: 0; color: #333;"><a href="themes/coldme/">coldme</a></h3> 
+
+<div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 30px;"> <img src="themes/coldme/coldme_light.png" alt="coldme light" width="100%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /> <img src="themes/coldme/coldme_dark.png" alt="coldme dark" width="100%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /> </div>
+
+</td>
+    <td>
+
+<h3 style="text-align: center; margin-top: 0; color: #333;"><a href="themes/mininini/">mininini</a></h3> 
+        
+<div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 30px;"> <img src="themes/mininini/mininini_light.png" alt="mininini light" width="100%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /> <img src="themes/mininini/mininini_dark.png" alt="mininini dark" width="100%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /> </div>
+
+</td>
+    <td>
+
+<h3 style="text-align: center; margin-top: 0; color: #333;"><a href="themes/wigwam/">wigwam</a></h3> 
+        
+<div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 30px;"> <img src="themes/wigwam/wigwam_light.png" alt="wigwam light" width="100%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /> <img src="themes/wigwam/wigwam_dark.png" alt="wigwam dark" width="100%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /> </div> </div>
+
+</td>
+  </tr>
+</table>
+
+</div>
 
 ## Get Started
 
