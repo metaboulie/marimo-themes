@@ -1,4 +1,4 @@
-# Marimo Custom Themes
+# [Marimo](https://github.com/marimo-team/marimo) Custom Themes
 
 > [!NOTE]
 >
