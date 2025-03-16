@@ -69,9 +69,9 @@ hatch run test:test
     ```
     themes/
     └── your_theme_name/
-        ├── theme.css
-        ├── preview_light.png
-        ├── preview_dark.png
+        ├── <theme-name>.css
+        ├── preview_light.png (optional)
+        ├── preview_dark.png (optional)
         └── README.md (optional)
     ```
 
@@ -82,19 +82,6 @@ hatch run test:test
 3. Add tests for any new functionality
 4. Update documentation as needed
 5. Submit a pull request with a clear description of your changes
-
-## Project Roadmap
-
-Current development priorities include:
-
--   [ ] `motheme preview`: Preview themes before applying
--   [ ] `motheme validate`: Validate theme file structure
--   [ ] `motheme random`: Apply random themes
--   [ ] Integration with custom HTML head
--   [ ] Enhanced theme testing and validation
--   [ ] Improved documentation and examples
-
-For a complete list of planned features and improvements, see [roadmap.md](roadmap.md).
 
 ## Need Help?
 
