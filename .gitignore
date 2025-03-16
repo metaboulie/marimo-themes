@@ -1,1 +1,15 @@
 *
+!.gitignore
+!CONTRIBUTING.md
+!LICENSE
+!README.md
+!pyproject.toml
+!ruff.toml
+!.github/
+!.github/**
+!src/
+!src/**/*.py
+!tests/
+!tests/**/*.py
+!themes/
+!themes/**

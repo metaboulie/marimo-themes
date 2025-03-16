@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "motheme"
 description = "Marimo Theming Management"
-authors = [{ name = "eugene", email = "heinereugene@pm.me" }]
+authors = [{ name = "métaboulie", email = "metaboulie@pm.me" }]
 dynamic = ["version"]
 dependencies = [
   "appdirs>=1.4.4",   # Cross-platform directory paths
