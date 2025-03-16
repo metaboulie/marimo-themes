@@ -1,4 +1,24 @@
-exclude = ["tests"]
+exclude = [
+  ".bzr",
+  ".direnv",
+  ".eggs",
+  ".git",
+  ".git-rewrite",
+  ".hg",
+  ".nox",
+  ".pyenv",
+  ".pytest_cache",
+  ".pytype",
+  ".ruff_cache",
+  ".venv",
+  "__pypackages__",
+  "_build",
+  "build",
+  "dist",
+  "site-packages",
+  "venv",
+  "tests",
+]
 
 # Support Python 3.9+.
 target-version = "py39"
@@ -11,75 +31,125 @@ fix = true
 unsafe-fixes = true
 
 [lint]
-select = [
-  # pycodestyle
-  "E",
-  # Pyflakes
-  "F",
-  # pyupgrade
-  "UP",
-  # flake8-bugbear
-  "B",
-  # flake8-simplify
-  "SIM",
-  # isort
-  "I",
-  # flake8-quotes
-  "Q",
-  "W",
-  "C90",
-  "N",
-  "D",
-  "YTT",
-  "ANN",
-  "ASYNC",
-  "S",
-  "BLE",
-  "FBT",
-  "A",
-  "COM",
-  "C4",
-  "DTZ",
-  "T10",
-  "DJ",
-  "EM",
-  "EXE",
-  "FA",
-  "ISC",
-  "ICN",
-  "LOG",
-  "G",
-  "INP",
-  "PIE",
-  "T20",
-  "PYI",
-  "PT",
-  "RSE",
-  "RET",
-  "SLF",
-  "SLOT",
-  "TID",
-  "TCH",
-  "INT",
-  "ARG",
-  "PTH",
-  "TD",
-  "FIX",
-  "ERA",
-  "PD",
-  "PGH",
-  "PL",
-  "TRY",
-  "FLY",
-  "NPY",
-  "AIR",
-  "PERF",
-  "FURB",
-  "RUF",
+# Allow minus-sign (U+2212), greek-small-letter-rho (U+03C1), and the asterisk-operator (U+2217),
+# which could be confused for "-", "p", and "*", respectively.
+allowed-confusables = ["−", "ρ", "∗"]
+# Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
+# Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
+# McCabe complexity (`C901`) by default.
+select = ["E4", "E7", "E9", "F"]
+extend-select = [
+  "ERA001", # Checks for commented-out Python code.
+  "YTT",    # https://pypi.org/project/flake8-2020/
+  "ANN001", # Checks that function arguments have type annotations.
+  "ANN201", # Checks that public functions and methods have return type annotations.
+  "ANN202", # Checks that private functions and methods have return type annotations.
+  "ANN205", # Checks that static methods have return type annotations.
+  "ANN206", # Checks that class methods have return type annotations.
+  "ANN401", # Checks that function arguments are annotated with a more specific type than Any.
+  "ASYNC",  # https://docs.astral.sh/ruff/rules/#flake8-async-async
+  "S",      # https://docs.astral.sh/ruff/rules/#flake8-bandit-s
+  "BLE001", # Checks for except clauses that catch all exceptions. 
+  "FBT",    # https://docs.astral.sh/ruff/rules/#flake8-boolean-trap-fbt
+  "B",      # https://docs.astral.sh/ruff/rules/#flake8-bugbear-b
+  "A",      # https://docs.astral.sh/ruff/rules/#flake8-builtins-a
+  "COM",    # https://docs.astral.sh/ruff/rules/#flake8-commas-com
+  "C4",     # https://docs.astral.sh/ruff/rules/#flake8-comprehensions-c4 
+  "DTZ",    # https://docs.astral.sh/ruff/rules/#flake8-datetimez-dtz
+  "T100",   # Checks for the presence of debugger calls and imports.
+  "EM",     # https://docs.astral.sh/ruff/rules/#flake8-errmsg-em
+  "EXE",    # https://docs.astral.sh/ruff/rules/#flake8-executable-exe
+  "FIX",    # https://docs.astral.sh/ruff/rules/#flake8-fixme-fix
+  "FA",     # https://docs.astral.sh/ruff/rules/#flake8-future-annotations-fa
+  "INT",    # https://docs.astral.sh/ruff/rules/#flake8-gettext-int
+  "ISC",    # https://docs.astral.sh/ruff/rules/#flake8-implicit-str-concat-isc
+  "ICN",    # https://docs.astral.sh/ruff/rules/#flake8-import-conventions-icn
+  "LOG",    # https://docs.astral.sh/ruff/rules/#flake8-logging-log
+  "G",      # https://docs.astral.sh/ruff/rules/#flake8-logging-format-g
+  "INP001", # Checks for packages that are missing an __init__.py file.
+  "PIE",    # https://docs.astral.sh/ruff/rules/#flake8-pie-pie
+  "T20",    # https://docs.astral.sh/ruff/rules/#flake8-print-t20
+  "PYI",    # https://docs.astral.sh/ruff/rules/#flake8-pyi-pyi
+  "PT",     # https://docs.astral.sh/ruff/rules/#flake8-pytest-style-pt
+  "Q",      # https://docs.astral.sh/ruff/rules/#flake8-quotes-q
+  "RSE102", # Checks for unnecessary parentheses on raised exceptions.
+  "RET",    # https://docs.astral.sh/ruff/rules/#flake8-return-ret
+  "SLF001", # Checks for accesses on "private" class members.
+  "SIM",    # https://docs.astral.sh/ruff/rules/#flake8-simplify-sim
+  "SLOT",   # https://docs.astral.sh/ruff/rules/#flake8-slots-slot
+  "TID",    # https://docs.astral.sh/ruff/rules/#flake8-tidy-imports-tid
+  "TD",     # https://docs.astral.sh/ruff/rules/#flake8-todos-td
+  "TC",     # https://docs.astral.sh/ruff/rules/#flake8-type-checking-tc
+  "ARG",    # https://docs.astral.sh/ruff/rules/#flake8-unused-arguments-arg
+  "PTH",    # https://docs.astral.sh/ruff/rules/#flake8-use-pathlib-pth
+  "FLY002", # Checks for str.join calls that can be replaced with f-strings.
+  "I",      # https://docs.astral.sh/ruff/rules/#isort-i
+  "C90",    # https://docs.astral.sh/ruff/rules/#mccabe-c90
+  "NPY",    # https://docs.astral.sh/ruff/rules/#numpy-specific-rules-npy
+  "N",      # https://docs.astral.sh/ruff/rules/#pep8-naming-n
+  "PERF",   # https://docs.astral.sh/ruff/rules/#perflint-perf
+  "E",      # https://docs.astral.sh/ruff/rules/#pycodestyle-e-w
+  "W",      # https://docs.astral.sh/ruff/rules/#pycodestyle-e-w
+  "DOC",    # https://docs.astral.sh/ruff/rules/#pydoclint-doc
+  "PGH",    # https://docs.astral.sh/ruff/rules/#pygrep-hooks-pgh
+  "PL",     # https://docs.astral.sh/ruff/rules/#pylint-pl
+  "UP",     # https://docs.astral.sh/ruff/rules/#pyupgrade-up
+  "FURB",   # https://docs.astral.sh/ruff/rules/#refurb-furb
+  "RUF",    # https://docs.astral.sh/ruff/rules/#refurb-furb
+  "TRY",    # https://docs.astral.sh/ruff/rules/#tryceratops-try
+]
+ignore = [
+  "D107",   # Checks for public __init__ method definitions that are missing docstrings.
+  "D203",   # Checks for docstrings on class definitions that are not preceded by a blank line.
+  "D212",   # Checks for docstring summary lines that are not positioned on the first physical line of the docstring.
+  "E501",   # Checks for lines that exceed the specified maximum character length.
+  "E731",   # Checks for lambda expressions which are assigned to a variable.
+  "COM812", # Checks for the absence of trailing commas.
+  "G004",   # Checks for uses of f-strings to format logging messages.
 ]
 
-ignore = ["D203", "D205", "D212", "COM812", "ISC001", "T201"]
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = [
+  "T20", # https://docs.astral.sh/ruff/rules/#flake8-print-t20
+]
+
+# Only ignore variables named "_".
+dummy-variable-rgx = "^_$"
+
+# Ignore `E402` (import violations) in all `__init__.py` files, and in selected subdirectories.
+[lint.per-file-ignores]
+"__init__.py" = ["E402"]
+"**/{tests,docs,tools}/*" = ["E402"]
+# Ignore `D` rules everywhere except for the `src/` directory.
+"!src/**.py" = ["D"]
 
 [format]
+exclude = ["*.pyi"]
+
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+# Enable auto-formatting of code examples in docstrings. Markdown,
+# reStructuredText code/literal blocks and doctests are all supported.
+#
+# This is currently disabled by default, but it is planned for this
+# to be opt-out in the future.
 docstring-code-format = true
-docstring-code-line-length = 60
+
+# Set the line length limit used when formatting code snippets in
+# docstrings.
+#
+# This only has an effect when the `docstring-code-format` setting is
+# enabled.
+docstring-code-line-length = "dynamic"
+
