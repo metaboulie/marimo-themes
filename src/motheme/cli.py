@@ -191,7 +191,7 @@ def download(
 
     if not theme_names:
         print("Error: Please specify at least one theme name to download or use --all.")
-        print("       Run 'mtheme themes' to see available themes.")
+        print("       Run 'motheme ls --not-installed' to see available themes.")
         return
 
     print(f"Downloading themes: {', '.join(theme_names)}")
@@ -201,7 +201,7 @@ def download(
         print(f"Successfully downloaded: {', '.join(downloaded)}")
     if not_found:
         print(f"Themes not found or failed to download: {', '.join(not_found)}")
-        print("Run 'mtheme themes' to see available themes.")
+        print("Run 'motheme ls --not-installed' to see available themes.")
 
 
 @arguably.command
