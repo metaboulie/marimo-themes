@@ -20,7 +20,7 @@ def validate_theme_exists(theme_name: str, themes_dir: Path) -> Path:
 
 def get_themes_dir() -> Path:
     """Get the themes directory path."""
-    themes_dir = Path(appdirs.user_data_dir("mtheme", "marimo")) / "themes"
+    themes_dir = Path(appdirs.user_data_dir("motheme", "marimo")) / "themes"
     if not themes_dir.exists():
         themes_dir.mkdir(parents=True, exist_ok=True)
     return themes_dir
