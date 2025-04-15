@@ -5,10 +5,13 @@ import arguably
 from motheme.operations import (
     apply_theme,
     clear_theme,
+    create_font,
     create_theme,
     current_theme,
+    list_fonts,
     list_theme,
     remove_theme_files,
+    set_font,
 )
 from motheme.utils import (
     check_files_provided,
@@ -183,6 +186,56 @@ def create(ref_theme_name: str, theme_name: str) -> None:
 
     """
     create_theme(ref_theme_name, theme_name)
+
+
+@arguably.command
+def font() -> None:
+    """Font operations for Marimo themes."""
+
+
+@arguably.command
+def font__set(
+    font_name: str,
+    *theme_names: str,
+    all_themes: bool = False,
+) -> None:
+    """
+    Apply a font template to specified theme(s).
+
+    Args:
+        font_name: Name of the font template to apply
+        theme_names: Names of themes to apply the font to
+        all_themes: [-a/--all] If True, apply to all installed themes
+    """
+    set_font(font_name, *theme_names, all_themes=all_themes)
+
+
+@arguably.command
+def font__create(
+    font_name: str,
+    ref_font_name: str = "default",
+) -> None:
+    """
+    Create a new font template by duplicating a reference font.
+
+    Args:
+        font_name: Name for the new font
+        ref_font_name: Name of the reference font to duplicate (defaults to 'default')
+    """
+    create_font(font_name, ref_font_name)
+
+
+@arguably.command
+def font__list() -> None:
+    """List available font templates."""
+    fonts = list_fonts()
+    if not fonts:
+        print("No font templates found.")
+        return
+    
+    print("Available font templates:")
+    for font in fonts:
+        print(f"- {font}")
 
 
 def main() -> None:
