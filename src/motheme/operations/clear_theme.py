@@ -91,8 +91,6 @@ def clear_theme(files: list[str]) -> None:
 
     # Summary
     if modified_files:
-        print(
-            f"\nSuccessfully cleared theme from {len(modified_files)} file(s)."
-        )
+        print(f"\nSuccessfully cleared theme from {len(modified_files)} file(s).")
     else:
         print("No files were modified.")

@@ -27,16 +27,20 @@ from motheme.utils import (
 @arguably.command
 def update() -> None:
     """Update Marimo themes from GitHub repository."""
-    print("\033[93mWARNING: The 'update' command is deprecated and will be removed in v0.4.0. "
-          "Use 'motheme download --all' instead.\033[0m")
+    print(
+        "\033[93mWARNING: The 'update' command is deprecated and will be removed in v0.4.0. "
+        "Use 'motheme download --all' instead.\033[0m"
+    )
     download_themes()
 
 
 @arguably.command
 def themes() -> None:
     """List available Marimo themes."""
-    print("\033[93mWARNING: The 'themes' command is deprecated and will be removed in v0.4.0. "
-          "Use 'motheme ls' instead.\033[0m")
+    print(
+        "\033[93mWARNING: The 'themes' command is deprecated and will be removed in v0.4.0. "
+        "Use 'motheme ls' instead.\033[0m"
+    )
     list_theme()
 
 
@@ -52,7 +56,7 @@ def ls(
 ) -> None:
     """
     List themes and fonts with various filtering options.
-    
+
     Args:
         list_all: [-a/--all] List all available themes and fonts with attributes
         all_themes: [--all-themes] List all available themes
@@ -64,27 +68,28 @@ def ls(
     # If no flags are provided, show installed themes by default
     if not any([list_all, all_themes, installed, not_installed, custom, font]):
         installed = True
-    
+
     themes_dir = get_themes_dir()
-    
+
     # Get all installed themes
     local_themes = [theme.stem for theme in themes_dir.glob("*.css")]
-    
+
     # Get remote available themes
     remote_themes = []
     if not_installed or list_all or all_themes or custom:
         try:
             repo_url = "https://github.com/metaboulie/marimo-themes"
-            api_url = repo_url.replace("https://github.com", "https://api.github.com/repos")
+            api_url = repo_url.replace(
+                "https://github.com", "https://api.github.com/repos"
+            )
             themes_api_url = f"{api_url}/contents/themes"
-            
+
             response = requests.get(themes_api_url, timeout=10)
             response.raise_for_status()
             theme_folders = response.json()
-            
+
             remote_themes = [
-                folder["name"] for folder in theme_folders 
-                if folder["type"] == "dir"
+                folder["name"] for folder in theme_folders if folder["type"] == "dir"
             ]
         except requests.RequestException as e:
             print(f"Warning: Could not fetch remote themes: {e}")
@@ -93,10 +98,10 @@ def ls(
     fonts = []
     if font or list_all:
         fonts = list_fonts()
-    
+
     # Determine which themes are custom (not in remote repo)
     custom_themes = [theme for theme in local_themes if theme not in remote_themes]
-    
+
     # Handle --installed flag
     if installed and not (list_all or all_themes):
         if local_themes:
@@ -105,17 +110,19 @@ def ls(
                 print(f"- {theme}")
         else:
             print("No themes installed. Run 'motheme download' to download themes.")
-    
+
     # Handle --not-installed flag
     if not_installed and not (list_all or all_themes):
-        not_installed_themes = [theme for theme in remote_themes if theme not in local_themes]
+        not_installed_themes = [
+            theme for theme in remote_themes if theme not in local_themes
+        ]
         if not_installed_themes:
             print("Available Themes (Not Installed):")
             for theme in sorted(not_installed_themes):
                 print(f"- {theme}")
         else:
             print("All available themes are already installed.")
-    
+
     # Handle --custom flag
     if custom and not (list_all or all_themes):
         if custom_themes:
@@ -124,7 +131,7 @@ def ls(
                 print(f"- {theme}")
         else:
             print("No custom themes found.")
-    
+
     # Handle --font flag
     if font and not (list_all or all_themes):
         if fonts:
@@ -133,42 +140,49 @@ def ls(
                 print(f"- {font_name}")
         else:
             print("No font templates found.")
-    
+
     # Handle --all or -a flag
     if list_all or all_themes:
         # Get not installed themes
-        not_installed_themes = [theme for theme in remote_themes if theme not in local_themes]
-        
+        not_installed_themes = [
+            theme for theme in remote_themes if theme not in local_themes
+        ]
+
         # Standard installed themes (not custom)
         standard_themes = [theme for theme in local_themes if theme in remote_themes]
-        
+
         # Find max length for alignment
         all_names = standard_themes + custom_themes + not_installed_themes
         if list_all:
             all_names.extend(fonts)
         max_length = max([len(name) for name in all_names]) if all_names else 0
-        
+
         title = "All Themes and Fonts:" if list_all else "All Themes:"
         print(title)
-        
+
         # Print installed standard themes
         for theme in sorted(standard_themes):
             print(f"- {theme:{max_length}} \033[92m[installed]\033[0m")
-        
+
         # Print custom themes
         for theme in sorted(custom_themes):
             print(f"- {theme:{max_length}} \033[94m[custom]\033[0m")
-        
+
         # Print not installed themes
         for theme in sorted(not_installed_themes):
             print(f"- {theme:{max_length}} \033[93m[not installed]\033[0m")
-        
+
         # Print fonts only for list_all
         if list_all:
             for font_name in sorted(fonts):
                 print(f"- {font_name:{max_length}} \033[95m[font]\033[0m")
-        
-        if not (standard_themes or custom_themes or not_installed_themes or (list_all and fonts)):
+
+        if not (
+            standard_themes
+            or custom_themes
+            or not_installed_themes
+            or (list_all and fonts)
+        ):
             print("No themes" + (" or fonts" if list_all else "") + " found.")
 
 
@@ -256,9 +270,7 @@ def clear(
         return
 
     with quiet_mode(enabled=quiet):
-        clear_theme(
-            expand_files(*files, recursive=recursive, git_ignore=git_ignore)
-        )
+        clear_theme(expand_files(*files, recursive=recursive, git_ignore=git_ignore))
 
 
 @arguably.command
@@ -283,9 +295,7 @@ def current(
         return
 
     with quiet_mode(enabled=quiet):
-        current_theme(
-            expand_files(*files, recursive=recursive, git_ignore=git_ignore)
-        )
+        current_theme(expand_files(*files, recursive=recursive, git_ignore=git_ignore))
 
 
 @arguably.command
@@ -368,7 +378,7 @@ def font__list() -> None:
     if not fonts:
         print("No font templates found.")
         return
-    
+
     print("Available font templates:")
     for font in fonts:
         print(f"- {font}")

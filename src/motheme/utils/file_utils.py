@@ -40,9 +40,7 @@ def is_marimo_file(path: str) -> bool:
         return False
 
 
-def check_files_provided(
-    action_description: str, files: tuple[str, ...]
-) -> bool:
+def check_files_provided(action_description: str, files: tuple[str, ...]) -> bool:
     """Check if files were provided and print error message if not."""
     if not files:
         print(

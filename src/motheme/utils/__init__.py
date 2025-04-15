@@ -5,7 +5,12 @@ from .file_utils import check_files_provided
 from .git_utils import expand_files
 from .io_utils import quiet_mode
 from .theme_downloader import download_themes, download_specific_themes
-from .theme_utils import get_themes_dir, validate_theme_exists, get_fonts_dir, validate_font_exists
+from .theme_utils import (
+    get_themes_dir,
+    validate_theme_exists,
+    get_fonts_dir,
+    validate_font_exists,
+)
 
 __all__ = [
     "check_files_provided",
