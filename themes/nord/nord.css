@@ -1,12 +1,9 @@
-/* Load Merriweather and Fira Code from Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300..900&family=Fira+Code:wght@300..700&display=swap");
-
 /* Font and Radius Variables */
 :root {
-    --monospace-font: "Fira Code", monospace; /* Clean coding font */
-    --text-font: "Merriweather", serif; /* Soft serif for warmth and comfort */
-    --heading-font: "Merriweather", serif; /* Consistent with text font */
-    --radius: 12px; /* Slightly softer corners for a gentler feel */
+    --monospace-font: var(--marimo-monospace-font, "Fira Mono", monospace);
+    --text-font: var(--marimo-text-font, "PT Sans", sans-serif);
+    --heading-font: var(--marimo-heading-font, "Lora", serif);
+    --radius: 8px;
 }
 
 /* Base Colors */
@@ -48,10 +45,7 @@
 
 /* Shadows */
 :root {
-    --base-shadow: light-dark(
-        hsla(0deg, 0%, 85%, 40%),
-        hsla(0deg, 0%, 36%, 60%)
-    );
+    --base-shadow: light-dark(hsla(0deg, 0%, 85%, 40%), hsla(0deg, 0%, 36%, 60%));
     --base-shadow-darker: light-dark(
         hsla(0deg, 0%, 50%, 40%),
         hsla(0deg, 0%, 50%, 60%)
