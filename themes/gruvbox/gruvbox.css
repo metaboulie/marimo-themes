@@ -1,12 +1,12 @@
 /* Gruvbox Theme for Marimo */
-/* Based on Radix colors: https://github.com/radix-ui/colors */
+/* https://github.com/morhetz/gruvbox */
 
 /* Font and Radius Variables */
 :root {
-    --monospace-font: var(--marimo-monospace-font, "Iosevka Nerd Font", monospace);
-    --text-font: var(--marimo-text-font, "Iosevka Nerd Font", sans-serif);
-    --heading-font: var(--marimo-heading-font, "Iosevka Nerd Font", serif);
-    --radius: 6px;
+    --monospace-font: var(--marimo-monospace-font, "Fira Mono", monospace);
+    --text-font: var(--marimo-text-font, "PT Sans", sans-serif);
+    --heading-font: var(--marimo-heading-font, "Lora", serif);
+    --radius: 8px;
 }
 
 /* Base colors */
