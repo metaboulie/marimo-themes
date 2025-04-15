@@ -1,0 +1,77 @@
+/* Ayu Mirage color scheme: https://github.com/ayu-theme */
+
+/* Font and Radius Variables */
+:root {
+    --monospace-font: var(--marimo-monospace-font, "Fira Mono", monospace);
+    --text-font: var(--marimo-text-font, "PT Sans", sans-serif);
+    --heading-font: var(--marimo-heading-font, "Lora", serif);
+    --radius: 8px;
+}
+
+/* Ayu Mirage color palette */
+:root {
+    /* Base Colors */
+    --ayu-mirage-bg: hsl(220, 8%, 20%);          /* Background */
+    --ayu-mirage-bg-highlight: hsl(220, 8%, 25%); /* Background highlight */
+    --ayu-mirage-fg: hsl(0, 0%, 85%);            /* Foreground */
+    --ayu-mirage-fg-muted: hsl(0, 0%, 65%);      /* Muted foreground */
+    --ayu-mirage-ui: hsl(220, 9%, 30%);          /* UI elements */
+    --ayu-mirage-ui-border: hsl(220, 9%, 35%);   /* UI borders */
+
+    /* Accent Colors */
+    --ayu-mirage-orange: hsl(29, 68%, 63%);      /* #FFCC66 */
+    --ayu-mirage-yellow: hsl(40, 100%, 65%);     /* #FFD173 */
+    --ayu-mirage-green: hsl(114, 38%, 56%);      /* #73D0AA */
+    --ayu-mirage-blue: hsl(197, 87%, 64%);       /* #5CCFE6 */
+    --ayu-mirage-purple: hsl(256, 100%, 77%);    /* #D4BFFF */
+    --ayu-mirage-red: hsl(357, 79%, 65%);        /* #F28779 */
+    --ayu-mirage-cyan: hsl(176, 60%, 55%);       /* #5CCFE6 */
+    --ayu-mirage-pink: hsl(345, 90%, 75%);       /* #FF6A80 */
+}
+
+/* Base colors with light-dark variants */
+:root {
+    --background: light-dark(hsl(210, 25%, 96%), var(--ayu-mirage-bg));
+    --foreground: light-dark(hsl(210, 10%, 30%), var(--ayu-mirage-fg));
+    --muted: light-dark(hsl(210, 25%, 90%), var(--ayu-mirage-bg-highlight));
+    --muted-foreground: light-dark(hsl(210, 10%, 50%), var(--ayu-mirage-fg-muted));
+    --popover: light-dark(hsl(210, 25%, 96%), var(--ayu-mirage-bg));
+    --popover-foreground: light-dark(hsl(210, 10%, 30%), var(--ayu-mirage-fg));
+    --card: light-dark(hsl(210, 25%, 96%), var(--ayu-mirage-bg));
+    --card-foreground: light-dark(hsl(210, 10%, 30%), var(--ayu-mirage-fg));
+    --border: light-dark(hsl(210, 10%, 80%), var(--ayu-mirage-ui-border));
+    --input: light-dark(hsl(210, 10%, 80%), var(--ayu-mirage-ui-border));
+    --primary: light-dark(var(--ayu-mirage-blue), var(--ayu-mirage-blue));
+    --primary-foreground: light-dark(white, black);
+    --secondary: light-dark(hsl(210, 25%, 90%), var(--ayu-mirage-ui));
+    --secondary-foreground: light-dark(hsl(210, 10%, 30%), var(--ayu-mirage-fg));
+    --accent: light-dark(var(--ayu-mirage-orange), var(--ayu-mirage-orange));
+    --accent-foreground: light-dark(black, black);
+    --ring: var(--ayu-mirage-blue);
+}
+
+/* Semantic colors */
+:root {
+    --destructive: var(--ayu-mirage-red);
+    --destructive-foreground: light-dark(white, black);
+    --error: var(--ayu-mirage-red);
+    --error-foreground: light-dark(white, black);
+    --success: var(--ayu-mirage-green);
+    --success-foreground: light-dark(black, black);
+    --action: var(--ayu-mirage-yellow);
+    --action-hover: light-dark(hsl(40, 100%, 70%), hsl(40, 100%, 60%));
+    --action-foreground: light-dark(black, black);
+    --link: light-dark(var(--ayu-mirage-blue), var(--ayu-mirage-blue));
+    --link-visited: light-dark(var(--ayu-mirage-purple), var(--ayu-mirage-purple));
+    --stale: hsl(40, 100%, 65% / 25%);
+}
+
+/* Base shadows */
+:root {
+    --base-shadow: light-dark(hsla(210, 25%, 50% / 40%), hsla(220, 8%, 15% / 60%));
+    --base-shadow-darker: light-dark(
+        hsla(210, 25%, 40% / 40%),
+        hsla(220, 8%, 25% / 60%)
+    );
+    --base-shadow-opacity: 5%;
+} 

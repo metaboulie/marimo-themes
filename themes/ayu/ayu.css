@@ -1,0 +1,77 @@
+/* Ayu color scheme: https://github.com/ayu-theme */
+
+/* Font and Radius Variables */
+:root {
+    --monospace-font: var(--marimo-monospace-font, "Fira Mono", monospace);
+    --text-font: var(--marimo-text-font, "PT Sans", sans-serif);
+    --heading-font: var(--marimo-heading-font, "Lora", serif);
+    --radius: 8px;
+}
+
+/* Ayu color palette */
+:root {
+    /* Base Colors */
+    --ayu-bg: hsl(210, 9%, 13%);          /* Background */
+    --ayu-bg-highlight: hsl(210, 13%, 18%); /* Background highlight */
+    --ayu-fg: hsl(0, 0%, 80%);            /* Foreground */
+    --ayu-fg-muted: hsl(0, 0%, 60%);      /* Muted foreground */
+    --ayu-ui: hsl(220, 9%, 25%);          /* UI elements */
+    --ayu-ui-border: hsl(220, 9%, 30%);   /* UI borders */
+
+    /* Accent Colors */
+    --ayu-orange: hsl(32, 93%, 66%);      /* #FFAE57 */
+    --ayu-yellow: hsl(40, 94%, 68%);      /* #FFD580 */
+    --ayu-green: hsl(91, 55%, 61%);       /* #C2D94C */
+    --ayu-blue: hsl(201, 98%, 62%);       /* #59C2FF */
+    --ayu-purple: hsl(301, 63%, 71%);     /* #D2A6FF */
+    --ayu-red: hsl(355, 100%, 69%);       /* #FF7733 */
+    --ayu-cyan: hsl(180, 58%, 57%);       /* #73B8BF */
+    --ayu-pink: hsl(330, 100%, 71%);      /* #F07178 */
+}
+
+/* Base colors with light-dark variants */
+:root {
+    --background: light-dark(hsl(210, 25%, 96%), var(--ayu-bg));
+    --foreground: light-dark(hsl(210, 10%, 30%), var(--ayu-fg));
+    --muted: light-dark(hsl(210, 25%, 90%), var(--ayu-bg-highlight));
+    --muted-foreground: light-dark(hsl(210, 10%, 50%), var(--ayu-fg-muted));
+    --popover: light-dark(hsl(210, 25%, 96%), var(--ayu-bg));
+    --popover-foreground: light-dark(hsl(210, 10%, 30%), var(--ayu-fg));
+    --card: light-dark(hsl(210, 25%, 96%), var(--ayu-bg));
+    --card-foreground: light-dark(hsl(210, 10%, 30%), var(--ayu-fg));
+    --border: light-dark(hsl(210, 10%, 80%), var(--ayu-ui-border));
+    --input: light-dark(hsl(210, 10%, 80%), var(--ayu-ui-border));
+    --primary: light-dark(var(--ayu-blue), var(--ayu-blue));
+    --primary-foreground: light-dark(white, black);
+    --secondary: light-dark(hsl(210, 25%, 90%), var(--ayu-ui));
+    --secondary-foreground: light-dark(hsl(210, 10%, 30%), var(--ayu-fg));
+    --accent: light-dark(var(--ayu-orange), var(--ayu-orange));
+    --accent-foreground: light-dark(black, black);
+    --ring: var(--ayu-blue);
+}
+
+/* Semantic colors */
+:root {
+    --destructive: var(--ayu-red);
+    --destructive-foreground: light-dark(white, black);
+    --error: var(--ayu-red);
+    --error-foreground: light-dark(white, black);
+    --success: var(--ayu-green);
+    --success-foreground: light-dark(black, black);
+    --action: var(--ayu-yellow);
+    --action-hover: light-dark(hsl(40, 94%, 73%), hsl(40, 94%, 63%));
+    --action-foreground: light-dark(black, black);
+    --link: light-dark(var(--ayu-blue), var(--ayu-blue));
+    --link-visited: light-dark(var(--ayu-purple), var(--ayu-purple));
+    --stale: hsl(40, 94%, 68% / 25%);
+}
+
+/* Base shadows */
+:root {
+    --base-shadow: light-dark(hsla(210, 25%, 50% / 40%), hsla(210, 9%, 20% / 60%));
+    --base-shadow-darker: light-dark(
+        hsla(210, 25%, 40% / 40%),
+        hsla(210, 9%, 30% / 60%)
+    );
+    --base-shadow-opacity: 5%;
+} 
