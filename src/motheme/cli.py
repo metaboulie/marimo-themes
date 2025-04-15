@@ -155,7 +155,7 @@ def ls(
         all_names = standard_themes + custom_themes + not_installed_themes
         if list_all:
             all_names.extend(fonts)
-        max_length = max([len(name) for name in all_names]) if all_names else 0
+        max_length = max(len(name) for name in all_names) if all_names else 0
 
         title = "All Themes and Fonts:" if list_all else "All Themes:"
         print(title)

@@ -47,7 +47,7 @@ def process_file(file_name: str) -> tuple[bool, list[str]]:
         - modified_content: List of lines with theme removed
 
     """
-    with Path(file_name).open("r") as f:
+    with Path(file_name).open("r", encoding="utf-8") as f:
         content = f.readlines()
 
     app_block = find_app_block(content)
@@ -79,7 +79,7 @@ def clear_theme(files: list[str]) -> None:
             theme_cleared, new_content = process_file(file_name)
 
             if theme_cleared:
-                with Path(file_name).open("w") as f:
+                with Path(file_name).open("w", encoding="utf-8") as f:
                     f.writelines(new_content)
                 modified_files.append(file_name)
                 print(f"Cleared theme from {file_name}")

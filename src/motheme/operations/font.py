@@ -1,7 +1,6 @@
 """Font operations module."""
 
 import re
-from pathlib import Path
 from shutil import copyfile
 
 from motheme.utils import (
@@ -34,7 +33,7 @@ def create_font(font_name: str, ref_font_name: str = "default") -> None:
     if not ref_font_path.exists():
         if ref_font_name == "default":
             # Create default font template
-            with open(ref_font_path, "w") as f:
+            with open(ref_font_path, "w", encoding="utf-8") as f:
                 f.write("""/* Font and Radius Variables */
 :root {
     --monospace-font: var(--marimo-monospace-font, "Fira Mono", monospace);
@@ -72,7 +71,7 @@ def set_font(font_name: str, *theme_names: str, all_themes: bool = False) -> Non
         return
 
     # Read font template
-    with open(font_path, "r") as f:
+    with open(font_path, encoding="utf-8") as f:
         font_content = f.read()
 
     # Get list of themes to update
@@ -96,7 +95,7 @@ def set_font(font_name: str, *theme_names: str, all_themes: bool = False) -> Non
             theme_path = validate_theme_exists(theme_name, themes_dir)
 
             # Read theme content
-            with open(theme_path, "r") as f:
+            with open(theme_path, encoding="utf-8") as f:
                 theme_content = f.read()
 
             # Check if theme has a font section
@@ -116,7 +115,7 @@ def set_font(font_name: str, *theme_names: str, all_themes: bool = False) -> Non
             )
 
             # Write updated theme
-            with open(theme_path, "w") as f:
+            with open(theme_path, "w", encoding="utf-8") as f:
                 f.write(updated_content)
 
             updated_themes.append(theme_name)

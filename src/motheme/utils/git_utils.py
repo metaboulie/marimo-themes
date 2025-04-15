@@ -18,7 +18,7 @@ def get_git_tracked_files() -> set[str]:
 
     """
     try:
-        output = subprocess.check_output(  # noqa: S603
+        output = subprocess.check_output(
             ["git", "ls-files"],  # noqa: S607
             stderr=subprocess.DEVNULL,
             text=True,

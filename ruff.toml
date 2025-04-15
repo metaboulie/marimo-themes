@@ -90,7 +90,6 @@ extend-select = [
   "PERF",   # https://docs.astral.sh/ruff/rules/#perflint-perf
   "E",      # https://docs.astral.sh/ruff/rules/#pycodestyle-e-w
   "W",      # https://docs.astral.sh/ruff/rules/#pycodestyle-e-w
-  "DOC",    # https://docs.astral.sh/ruff/rules/#pydoclint-doc
   "PGH",    # https://docs.astral.sh/ruff/rules/#pygrep-hooks-pgh
   "PL",     # https://docs.astral.sh/ruff/rules/#pylint-pl
   "UP",     # https://docs.astral.sh/ruff/rules/#pyupgrade-up

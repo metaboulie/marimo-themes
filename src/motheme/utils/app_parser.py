@@ -73,7 +73,5 @@ def update_file_content(
 ) -> list[str]:
     """Replace the App block in the file content with new content."""
     return (
-        file_content[: app_block.start_line]
-        + [new_content]
-        + file_content[app_block.end_line + 1 :]
+        [*file_content[:app_block.start_line], new_content, *file_content[app_block.end_line + 1:]]
     )
