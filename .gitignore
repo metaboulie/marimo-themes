@@ -1,7 +1,4 @@
-# Ignore everything by default
 *
-
-# Don't ignore these specific files and directories
 !.gitignore
 !CHANGELOG.md
 !CONTRIBUTING.md
@@ -10,21 +7,17 @@
 !pyproject.toml
 !ruff.toml
 
-# Don't ignore GitHub directory
 !.github/
 !.github/**
 
-# Don't ignore src/motheme and its Python files
 !src/
 !src/motheme/
 !src/motheme/**/
 !src/motheme/**/*.py
 
-# Don't ignore tests
 !tests/
 !tests/**/
 !tests/**/*.py
 
-# Don't ignore themes
 !themes/
 !themes/**
