@@ -115,14 +115,21 @@ def current(
 
 
 @arguably.command
-def remove(*theme_names: str) -> None:
+def remove(*theme_names: str, all_themes: bool = False) -> None:
     """
     Remove specified theme files from themes directory.
 
     Args:
         theme_names: Names of themes to remove
+        all_themes: [-a/--all] If True, remove all installed themes
 
     """
+    from motheme.operations.list_theme import get_available_themes
+
+    if all_themes:
+        remove_theme_files(get_available_themes())
+        return
+
     if not theme_names:
         print("Error: Please specify at least one theme name to remove.")
         return
