@@ -11,22 +11,22 @@
 /* Ayu Mirage color palette */
 :root {
     /* Base Colors */
-    --ayu-mirage-bg: hsl(220, 8%, 20%);          /* Background */
+    --ayu-mirage-bg: hsl(220, 8%, 20%); /* Background */
     --ayu-mirage-bg-highlight: hsl(220, 8%, 25%); /* Background highlight */
-    --ayu-mirage-fg: hsl(0, 0%, 85%);            /* Foreground */
-    --ayu-mirage-fg-muted: hsl(0, 0%, 65%);      /* Muted foreground */
-    --ayu-mirage-ui: hsl(220, 9%, 30%);          /* UI elements */
-    --ayu-mirage-ui-border: hsl(220, 9%, 35%);   /* UI borders */
+    --ayu-mirage-fg: hsl(0, 0%, 85%); /* Foreground */
+    --ayu-mirage-fg-muted: hsl(0, 0%, 65%); /* Muted foreground */
+    --ayu-mirage-ui: hsl(220, 9%, 30%); /* UI elements */
+    --ayu-mirage-ui-border: hsl(220, 9%, 35%); /* UI borders */
 
     /* Accent Colors */
-    --ayu-mirage-orange: hsl(29, 68%, 63%);      /* #FFCC66 */
-    --ayu-mirage-yellow: hsl(40, 100%, 65%);     /* #FFD173 */
-    --ayu-mirage-green: hsl(114, 38%, 56%);      /* #73D0AA */
-    --ayu-mirage-blue: hsl(197, 87%, 64%);       /* #5CCFE6 */
-    --ayu-mirage-purple: hsl(256, 100%, 77%);    /* #D4BFFF */
-    --ayu-mirage-red: hsl(357, 79%, 65%);        /* #F28779 */
-    --ayu-mirage-cyan: hsl(176, 60%, 55%);       /* #5CCFE6 */
-    --ayu-mirage-pink: hsl(345, 90%, 75%);       /* #FF6A80 */
+    --ayu-mirage-orange: hsl(29, 68%, 63%); /* #FFCC66 */
+    --ayu-mirage-yellow: hsl(40, 100%, 65%); /* #FFD173 */
+    --ayu-mirage-green: hsl(114, 38%, 56%); /* #73D0AA */
+    --ayu-mirage-blue: hsl(197, 87%, 64%); /* #5CCFE6 */
+    --ayu-mirage-purple: hsl(256, 100%, 77%); /* #D4BFFF */
+    --ayu-mirage-red: hsl(357, 79%, 65%); /* #F28779 */
+    --ayu-mirage-cyan: hsl(176, 60%, 55%); /* #5CCFE6 */
+    --ayu-mirage-pink: hsl(345, 90%, 75%); /* #FF6A80 */
 }
 
 /* Base colors with light-dark variants */
@@ -74,4 +74,5 @@
         hsla(220, 8%, 25% / 60%)
     );
     --base-shadow-opacity: 5%;
-} 
+}
+

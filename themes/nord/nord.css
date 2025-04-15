@@ -15,18 +15,18 @@
     --nord1: hsl(222, 16%, 28%); /* dark bg highlights */
     --nord2: hsl(220, 17%, 32%); /* dark content */
     --nord3: hsl(220, 16%, 36%); /* dark content */
-    
+
     /* Snow Storm (light) */
     --nord4: hsl(219, 28%, 88%); /* light content */
     --nord5: hsl(218, 27%, 92%); /* light content */
     --nord6: hsl(218, 27%, 94%); /* light bg highlights */
-    
+
     /* Frost (blues) */
     --nord7: hsl(179, 25%, 65%); /* frost mint */
     --nord8: hsl(193, 43%, 67%); /* frost light blue */
     --nord9: hsl(210, 34%, 63%); /* frost blue */
     --nord10: hsl(213, 32%, 52%); /* frost deep blue */
-    
+
     /* Aurora (accent colors) */
     --nord11: hsl(354, 42%, 56%); /* red */
     --nord12: hsl(14, 51%, 63%); /* orange */
@@ -80,4 +80,5 @@
         hsla(220, 16%, 18% / 60%)
     );
     --base-shadow-opacity: 5%;
-} 
+}
+

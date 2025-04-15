@@ -11,22 +11,22 @@
 /* Ayu color palette */
 :root {
     /* Base Colors */
-    --ayu-bg: hsl(210, 9%, 13%);          /* Background */
+    --ayu-bg: hsl(210, 9%, 13%); /* Background */
     --ayu-bg-highlight: hsl(210, 13%, 18%); /* Background highlight */
-    --ayu-fg: hsl(0, 0%, 80%);            /* Foreground */
-    --ayu-fg-muted: hsl(0, 0%, 60%);      /* Muted foreground */
-    --ayu-ui: hsl(220, 9%, 25%);          /* UI elements */
-    --ayu-ui-border: hsl(220, 9%, 30%);   /* UI borders */
+    --ayu-fg: hsl(0, 0%, 80%); /* Foreground */
+    --ayu-fg-muted: hsl(0, 0%, 60%); /* Muted foreground */
+    --ayu-ui: hsl(220, 9%, 25%); /* UI elements */
+    --ayu-ui-border: hsl(220, 9%, 30%); /* UI borders */
 
     /* Accent Colors */
-    --ayu-orange: hsl(32, 93%, 66%);      /* #FFAE57 */
-    --ayu-yellow: hsl(40, 94%, 68%);      /* #FFD580 */
-    --ayu-green: hsl(91, 55%, 61%);       /* #C2D94C */
-    --ayu-blue: hsl(201, 98%, 62%);       /* #59C2FF */
-    --ayu-purple: hsl(301, 63%, 71%);     /* #D2A6FF */
-    --ayu-red: hsl(355, 100%, 69%);       /* #FF7733 */
-    --ayu-cyan: hsl(180, 58%, 57%);       /* #73B8BF */
-    --ayu-pink: hsl(330, 100%, 71%);      /* #F07178 */
+    --ayu-orange: hsl(32, 93%, 66%); /* #FFAE57 */
+    --ayu-yellow: hsl(40, 94%, 68%); /* #FFD580 */
+    --ayu-green: hsl(91, 55%, 61%); /* #C2D94C */
+    --ayu-blue: hsl(201, 98%, 62%); /* #59C2FF */
+    --ayu-purple: hsl(301, 63%, 71%); /* #D2A6FF */
+    --ayu-red: hsl(355, 100%, 69%); /* #FF7733 */
+    --ayu-cyan: hsl(180, 58%, 57%); /* #73B8BF */
+    --ayu-pink: hsl(330, 100%, 71%); /* #F07178 */
 }
 
 /* Base colors with light-dark variants */
@@ -74,4 +74,5 @@
         hsla(210, 9%, 30% / 60%)
     );
     --base-shadow-opacity: 5%;
-} 
+}
+

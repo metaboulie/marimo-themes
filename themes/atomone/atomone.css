@@ -43,25 +43,46 @@
     --border: light-dark(var(--atom-ui-bg-light), var(--atom-ui-bg-dark));
     --input: light-dark(var(--atom-subtle-light), var(--atom-subtle-dark));
     --primary: light-dark(var(--atom-blue), var(--atom-blue));
-    --primary-foreground: light-dark(var(--atom-syntax-bg-light), var(--atom-syntax-bg-dark));
+    --primary-foreground: light-dark(
+        var(--atom-syntax-bg-light),
+        var(--atom-syntax-bg-dark)
+    );
     --secondary: light-dark(var(--atom-ui-bg-light), var(--atom-ui-bg-dark));
-    --secondary-foreground: light-dark(var(--atom-text-light), var(--atom-syntax-bg-dark));
+    --secondary-foreground: light-dark(
+        var(--atom-text-light),
+        var(--atom-syntax-bg-dark)
+    );
     --accent: light-dark(var(--atom-purple), var(--atom-purple));
-    --accent-foreground: light-dark(var(--atom-syntax-bg-dark), var(--atom-syntax-bg-light));
+    --accent-foreground: light-dark(
+        var(--atom-syntax-bg-dark),
+        var(--atom-syntax-bg-light)
+    );
     --ring: var(--atom-blue);
 }
 
 /* Semantic colors */
 :root {
     --destructive: var(--atom-red);
-    --destructive-foreground: light-dark(var(--atom-syntax-bg-light), var(--atom-syntax-bg-dark));
+    --destructive-foreground: light-dark(
+        var(--atom-syntax-bg-light),
+        var(--atom-syntax-bg-dark)
+    );
     --error: var(--atom-red);
-    --error-foreground: light-dark(var(--atom-syntax-bg-light), var(--atom-syntax-bg-dark));
+    --error-foreground: light-dark(
+        var(--atom-syntax-bg-light),
+        var(--atom-syntax-bg-dark)
+    );
     --success: var(--atom-green);
-    --success-foreground: light-dark(var(--atom-syntax-bg-light), var(--atom-syntax-bg-dark));
+    --success-foreground: light-dark(
+        var(--atom-syntax-bg-light),
+        var(--atom-syntax-bg-dark)
+    );
     --action: var(--atom-yellow);
     --action-hover: light-dark(hsl(39, 67%, 75%), hsl(39, 67%, 60%));
-    --action-foreground: light-dark(var(--atom-syntax-bg-dark), var(--atom-syntax-bg-dark));
+    --action-foreground: light-dark(
+        var(--atom-syntax-bg-dark),
+        var(--atom-syntax-bg-dark)
+    );
     --link: light-dark(var(--atom-blue), var(--atom-blue));
     --link-visited: light-dark(var(--atom-purple), var(--atom-purple));
     --stale: hsl(39, 67%, 69% / 25%);
@@ -75,4 +96,5 @@
         hsla(220, 13% 35% / 60%)
     );
     --base-shadow-opacity: 5%;
-} 
+}
+

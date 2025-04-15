@@ -26,7 +26,9 @@
     --mol-yellow: hsl(45deg 100% 70%); /* #ffd866 */
     --mol-green: hsl(84deg 65% 66%); /* #a9dc76 */
     --mol-cyan: hsl(190deg 74% 69%); /* #78dce8 */
-    --mol-purple: hsl(275deg 60% 67%); /* #ab9df2 - not in original search but common in Molokai */
+    --mol-purple: hsl(
+        275deg 60% 67%
+    ); /* #ab9df2 - not in original search but common in Molokai */
 }
 
 /* Base colors with light-dark variants */
@@ -74,4 +76,5 @@
         hsla(270deg 4% 0% / 60%)
     );
     --base-shadow-opacity: 5%;
-} 
+}
+
