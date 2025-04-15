@@ -56,41 +56,44 @@ def create_font(font_name: str, ref_font_name: str = "default") -> None:
 def validate_font_template(font_path: Path) -> tuple[bool, str]:
     """
     Validate if a font template has the correct structure.
-    
+
     Args:
         font_path: Path to the font template file
-        
+
     Returns:
         tuple: (is_valid, error_message)
     """
     try:
         with open(font_path, encoding="utf-8") as f:
             content = f.read()
-            
+
         # Check if template starts with the expected comment
         if not content.strip().startswith("/* Font and Radius Variables */"):
-            return False, "Font template must start with '/* Font and Radius Variables */' comment"
-            
+            return (
+                False,
+                "Font template must start with '/* Font and Radius Variables */' comment",
+            )
+
         # Check if it contains a :root declaration
         if not re.search(r":root\s*\{", content):
             return False, "Font template must contain a ':root' declaration"
-            
+
         # Check for required font variables
         required_vars = [
             "--monospace-font",
             "--text-font",
             "--heading-font",
-            "--radius"
+            "--radius",
         ]
-        
+
         for var in required_vars:
             if var not in content:
                 return False, f"Font template must define '{var}' variable"
-                
+
         return True, "Font template is valid"
-        
+
     except Exception as e:
-        return False, f"Error validating font template: {str(e)}"
+        return False, f"Error validating font template: {e!s}"
 
 
 def set_font(font_name: str, *theme_names: str, all_themes: bool = False) -> None:
@@ -194,26 +197,25 @@ def list_fonts() -> list[str]:
 def validate_font(font_name: str) -> bool:
     """
     Validate if a font template has the correct structure.
-    
+
     Args:
         font_name: Name of the font template to validate
-        
+
     Returns:
         bool: True if validation succeeded, False otherwise
     """
     fonts_dir = get_fonts_dir()
-    
+
     try:
         font_path = validate_font_exists(font_name, fonts_dir)
     except FileNotFoundError:
         print(f"Error: Font template '{font_name}' not found.")
         return False
-        
+
     is_valid, error_message = validate_font_template(font_path)
-    
+
     if is_valid:
         print(f"Font template '{font_name}' is valid.")
         return True
-    else:
-        print(f"Font template '{font_name}' is invalid: {error_message}")
-        return False
+    print(f"Font template '{font_name}' is invalid: {error_message}")
+    return False
