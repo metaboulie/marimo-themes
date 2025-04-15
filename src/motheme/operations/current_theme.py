@@ -47,7 +47,7 @@ def read_file_content(file_path: str | Path) -> list[str]:
         OSError: If file cannot be read
 
     """
-    with Path(file_path).open("r") as f:
+    with Path(file_path).open("r", encoding="utf-8") as f:
         return f.readlines()
 
 

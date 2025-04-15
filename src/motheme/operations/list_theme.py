@@ -25,4 +25,4 @@ def list_theme() -> None:
         for theme in themes:
             print(f"- {theme}")
     else:
-        print("No themes downloaded. Run 'mtheme update' to download themes.")
+        print("No themes downloaded. Run 'motheme download' to download themes.")

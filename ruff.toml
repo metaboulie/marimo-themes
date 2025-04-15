@@ -23,12 +23,12 @@ exclude = [
 # Support Python 3.9+.
 target-version = "py39"
 
-# Set the maximum line length to 79.
-line-length = 79
-
-# auto-fix
+extend-include = []
 fix = true
+line-length = 88
+indent-width = 4
 unsafe-fixes = true
+preview = true
 
 [lint]
 # Allow minus-sign (U+2212), greek-small-letter-rho (U+03C1), and the asterisk-operator (U+2217),
@@ -90,7 +90,6 @@ extend-select = [
   "PERF",   # https://docs.astral.sh/ruff/rules/#perflint-perf
   "E",      # https://docs.astral.sh/ruff/rules/#pycodestyle-e-w
   "W",      # https://docs.astral.sh/ruff/rules/#pycodestyle-e-w
-  "DOC",    # https://docs.astral.sh/ruff/rules/#pydoclint-doc
   "PGH",    # https://docs.astral.sh/ruff/rules/#pygrep-hooks-pgh
   "PL",     # https://docs.astral.sh/ruff/rules/#pylint-pl
   "UP",     # https://docs.astral.sh/ruff/rules/#pyupgrade-up
@@ -106,6 +105,7 @@ ignore = [
   "E731",   # Checks for lambda expressions which are assigned to a variable.
   "COM812", # Checks for the absence of trailing commas.
   "G004",   # Checks for uses of f-strings to format logging messages.
+  "T20",    # https://docs.astral.sh/ruff/rules/#flake8-print-t20
 ]
 
 # Allow fix for all enabled rules (when `--fix`) is provided.
@@ -152,4 +152,3 @@ docstring-code-format = true
 # This only has an effect when the `docstring-code-format` setting is
 # enabled.
 docstring-code-line-length = "dynamic"
-

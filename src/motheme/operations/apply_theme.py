@@ -25,20 +25,14 @@ def modify_app_line(line: str, css_file_path: Path) -> str:
         )
     if line.strip().endswith("marimo.App()"):
         # No existing parameters
-        return line.replace(
-            "marimo.App()", f'marimo.App(css_file="{css_file_path}")'
-        )
+        return line.replace("marimo.App()", f'marimo.App(css_file="{css_file_path}")')
     # Has existing parameters, insert css_file
-    return line.replace(
-        "marimo.App(", f'marimo.App(css_file="{css_file_path}", '
-    )
+    return line.replace("marimo.App(", f'marimo.App(css_file="{css_file_path}", ')
 
 
-def process_file(
-    file_path: str, css_file_path: Path
-) -> tuple[bool, list[str]]:
+def process_file(file_path: str, css_file_path: Path) -> tuple[bool, list[str]]:
     """Process a single file and return (success, new_content)."""
-    with Path(file_path).open() as f:
+    with Path(file_path).open(encoding="utf-8") as f:
         content = f.readlines()
 
     app_block = find_app_block(content)
@@ -86,7 +80,7 @@ def apply_theme(
 
             if theme_applied:
                 try:
-                    with Path(file_name).open("w") as f:
+                    with Path(file_name).open("w", encoding="utf-8") as f:
                         f.writelines(new_content)
                         print(f"Applied theme {theme_name} to {file_name}")
                     modified_files.append(file_name)

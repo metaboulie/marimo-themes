@@ -1,0 +1,80 @@
+/* Molokai Pro color scheme inspired by: https://monokai.pro */
+
+/* Font and Radius Variables */
+:root {
+    --monospace-font: var(--marimo-monospace-font, "Fira Mono", monospace);
+    --text-font: var(--marimo-text-font, "PT Sans", sans-serif);
+    --heading-font: var(--marimo-heading-font, "Lora", serif);
+    --radius: 8px;
+}
+
+/* Molokai color palette */
+:root {
+    /* Base Colors */
+    --mol-bg: hsl(270deg 4% 12%); /* dark background */
+    --mol-bg-highlight: hsl(270deg 4% 18%); /* dark bg highlights */
+    --mol-fg-dark: hsl(60deg 10% 70%); /* dark content */
+    --mol-fg-muted: hsl(60deg 10% 80%); /* dark content */
+    --mol-fg-light: hsl(60deg 10% 90%); /* light content */
+    --mol-fg-bright: hsl(60deg 10% 95%); /* light content */
+    --mol-bg-light: hsl(0deg 0% 95%); /* light bg highlights */
+    --mol-bg-lighter: hsl(0deg 0% 100%); /* light bg */
+
+    /* Accent Colors */
+    --mol-pink: hsl(342deg 100% 69%); /* #ff6188 */
+    --mol-orange: hsl(22deg 97% 70%); /* #fc9867 */
+    --mol-yellow: hsl(45deg 100% 70%); /* #ffd866 */
+    --mol-green: hsl(84deg 65% 66%); /* #a9dc76 */
+    --mol-cyan: hsl(190deg 74% 69%); /* #78dce8 */
+    --mol-purple: hsl(
+        275deg 60% 67%
+    ); /* #ab9df2 - not in original search but common in Molokai */
+}
+
+/* Base colors with light-dark variants */
+:root {
+    --background: light-dark(var(--mol-bg-lighter), var(--mol-bg));
+    --foreground: light-dark(var(--mol-fg-dark), var(--mol-fg-light));
+    --muted: light-dark(var(--mol-bg-light), var(--mol-bg-highlight));
+    --muted-foreground: light-dark(var(--mol-fg-muted), var(--mol-fg-bright));
+    --popover: light-dark(var(--mol-bg-lighter), var(--mol-bg));
+    --popover-foreground: light-dark(var(--mol-fg-dark), var(--mol-fg-light));
+    --card: light-dark(var(--mol-bg-lighter), var(--mol-bg));
+    --card-foreground: light-dark(var(--mol-fg-dark), var(--mol-fg-light));
+    --border: light-dark(var(--mol-fg-muted), var(--mol-fg-dark));
+    --input: light-dark(var(--mol-fg-muted), var(--mol-fg-dark));
+    --primary: light-dark(var(--mol-pink), var(--mol-pink));
+    --primary-foreground: light-dark(var(--mol-bg-lighter), var(--mol-bg));
+    --secondary: light-dark(var(--mol-bg-light), var(--mol-fg-dark));
+    --secondary-foreground: light-dark(var(--mol-fg-dark), var(--mol-bg));
+    --accent: light-dark(var(--mol-cyan), var(--mol-cyan));
+    --accent-foreground: light-dark(var(--mol-bg), var(--mol-bg-lighter));
+    --ring: var(--mol-cyan);
+}
+
+/* Semantic colors */
+:root {
+    --destructive: var(--mol-pink);
+    --destructive-foreground: light-dark(var(--mol-bg-lighter), var(--mol-bg));
+    --error: var(--mol-pink);
+    --error-foreground: light-dark(var(--mol-bg-lighter), var(--mol-bg));
+    --success: var(--mol-green);
+    --success-foreground: light-dark(var(--mol-bg-lighter), var(--mol-bg));
+    --action: var(--mol-yellow);
+    --action-hover: light-dark(hsl(45deg 100% 75%), hsl(45deg 100% 65%));
+    --action-foreground: light-dark(var(--mol-bg), var(--mol-bg));
+    --link: light-dark(var(--mol-cyan), var(--mol-cyan));
+    --link-visited: light-dark(var(--mol-purple), var(--mol-purple));
+    --stale: hsl(45deg 100% 70% / 25%);
+}
+
+/* Base shadows */
+:root {
+    --base-shadow: light-dark(hsla(0deg 0% 50% / 40%), hsla(270deg 4% 5% / 60%));
+    --base-shadow-darker: light-dark(
+        hsla(0deg 0% 40% / 40%),
+        hsla(270deg 4% 0% / 60%)
+    );
+    --base-shadow-opacity: 5%;
+}
+

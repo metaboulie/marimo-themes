@@ -1,0 +1,79 @@
+/* Solarized color scheme by Ethan Schoonover: https://ethanschoonover.com/solarized/ */
+
+/* Font and Radius Variables */
+:root {
+    --monospace-font: var(--marimo-monospace-font, "Fira Mono", monospace);
+    --text-font: var(--marimo-text-font, "PT Sans", sans-serif);
+    --heading-font: var(--marimo-heading-font, "Lora", serif);
+    --radius: 8px;
+}
+
+/* Solarized color palette */
+:root {
+    /* Base Colors */
+    --sol-base03: hsl(193deg 100% 12%); /* dark bg */
+    --sol-base02: hsl(192deg 100% 17%); /* dark bg highlights */
+    --sol-base01: hsl(194deg 14% 40%); /* dark content */
+    --sol-base00: hsl(196deg 13% 45%); /* dark content */
+    --sol-base0: hsl(180deg 7% 60%); /* light content */
+    --sol-base1: hsl(180deg 8% 65%); /* light content */
+    --sol-base2: hsl(46deg 42% 88%); /* light bg highlights */
+    --sol-base3: hsl(44deg 87% 94%); /* light bg */
+
+    /* Accent Colors */
+    --sol-yellow: hsl(45deg 100% 50%);
+    --sol-orange: hsl(18deg 80% 52%);
+    --sol-red: hsl(1deg 71% 52%);
+    --sol-magenta: hsl(331deg 64% 52%);
+    --sol-violet: hsl(237deg 45% 55%);
+    --sol-blue: hsl(205deg 69% 49%);
+    --sol-cyan: hsl(175deg 59% 40%);
+    --sol-green: hsl(68deg 100% 34%);
+}
+
+/* Base colors with light-dark variants */
+:root {
+    --background: light-dark(var(--sol-base3), var(--sol-base03));
+    --foreground: light-dark(var(--sol-base00), var(--sol-base0));
+    --muted: light-dark(var(--sol-base2), var(--sol-base02));
+    --muted-foreground: light-dark(var(--sol-base01), var(--sol-base1));
+    --popover: light-dark(var(--sol-base3), var(--sol-base03));
+    --popover-foreground: light-dark(var(--sol-base00), var(--sol-base0));
+    --card: light-dark(var(--sol-base3), var(--sol-base03));
+    --card-foreground: light-dark(var(--sol-base00), var(--sol-base0));
+    --border: light-dark(var(--sol-base1), var(--sol-base01));
+    --input: light-dark(var(--sol-base1), var(--sol-base01));
+    --primary: light-dark(var(--sol-blue), var(--sol-blue));
+    --primary-foreground: light-dark(var(--sol-base3), var(--sol-base03));
+    --secondary: light-dark(var(--sol-base2), var(--sol-base01));
+    --secondary-foreground: light-dark(var(--sol-base00), var(--sol-base03));
+    --accent: light-dark(var(--sol-cyan), var(--sol-cyan));
+    --accent-foreground: light-dark(var(--sol-base03), var(--sol-base3));
+    --ring: var(--sol-blue);
+}
+
+/* Semantic colors */
+:root {
+    --destructive: var(--sol-red);
+    --destructive-foreground: light-dark(var(--sol-base3), var(--sol-base03));
+    --error: var(--sol-red);
+    --error-foreground: light-dark(var(--sol-base3), var(--sol-base03));
+    --success: var(--sol-green);
+    --success-foreground: light-dark(var(--sol-base3), var(--sol-base03));
+    --action: var(--sol-yellow);
+    --action-hover: light-dark(hsl(45deg 100% 55%), hsl(45deg 100% 45%));
+    --action-foreground: light-dark(var(--sol-base03), var(--sol-base03));
+    --link: light-dark(var(--sol-blue), var(--sol-blue));
+    --link-visited: light-dark(var(--sol-violet), var(--sol-violet));
+    --stale: hsl(45deg 100% 50% / 25%);
+}
+
+/* Base shadows */
+:root {
+    --base-shadow: light-dark(hsla(44deg 87% 50% / 40%), hsla(193deg 100% 20% / 60%));
+    --base-shadow-darker: light-dark(
+        hsla(44deg 87% 40% / 40%),
+        hsla(193deg 100% 30% / 60%)
+    );
+    --base-shadow-opacity: 5%;
+}

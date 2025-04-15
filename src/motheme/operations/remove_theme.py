@@ -69,9 +69,7 @@ def remove_theme_files(
         def confirm_func(msg: str) -> bool:
             return input(msg).lower().strip() == "y"
 
-    existing_themes, non_existing_themes = get_theme_status(
-        theme_names, themes_dir
-    )
+    existing_themes, non_existing_themes = get_theme_status(theme_names, themes_dir)
 
     if non_existing_themes:
         print_func("Following themes do not exist:")

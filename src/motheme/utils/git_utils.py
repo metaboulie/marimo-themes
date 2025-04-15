@@ -18,7 +18,7 @@ def get_git_tracked_files() -> set[str]:
 
     """
     try:
-        output = subprocess.check_output(  # noqa: S603
+        output = subprocess.check_output(
             ["git", "ls-files"],  # noqa: S607
             stderr=subprocess.DEVNULL,
             text=True,
@@ -33,9 +33,7 @@ def get_git_tracked_files() -> set[str]:
         return set()
 
 
-def expand_files(
-    *files: str, recursive: bool, git_ignore: bool = False
-) -> list[str]:
+def expand_files(*files: str, recursive: bool, git_ignore: bool = False) -> list[str]:
     """
     Expand file paths, optionally recursively for directories.
     Only includes valid Marimo notebook files.
@@ -56,8 +54,7 @@ def expand_files(
         try:
             return (
                 not git_ignore
-                or str(Path(path).resolve().relative_to(Path.cwd()))
-                in tracked_files
+                or str(Path(path).resolve().relative_to(Path.cwd())) in tracked_files
             )
         except ValueError as e:
             msg = (
