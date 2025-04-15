@@ -1,6 +1,7 @@
 """Font operations module."""
 
 import re
+from pathlib import Path
 from shutil import copyfile
 
 from motheme.utils import (
@@ -52,6 +53,46 @@ def create_font(font_name: str, ref_font_name: str = "default") -> None:
     print(f"Created new font template: {new_font_path}")
 
 
+def validate_font_template(font_path: Path) -> tuple[bool, str]:
+    """
+    Validate if a font template has the correct structure.
+    
+    Args:
+        font_path: Path to the font template file
+        
+    Returns:
+        tuple: (is_valid, error_message)
+    """
+    try:
+        with open(font_path, encoding="utf-8") as f:
+            content = f.read()
+            
+        # Check if template starts with the expected comment
+        if not content.strip().startswith("/* Font and Radius Variables */"):
+            return False, "Font template must start with '/* Font and Radius Variables */' comment"
+            
+        # Check if it contains a :root declaration
+        if not re.search(r":root\s*\{", content):
+            return False, "Font template must contain a ':root' declaration"
+            
+        # Check for required font variables
+        required_vars = [
+            "--monospace-font",
+            "--text-font",
+            "--heading-font",
+            "--radius"
+        ]
+        
+        for var in required_vars:
+            if var not in content:
+                return False, f"Font template must define '{var}' variable"
+                
+        return True, "Font template is valid"
+        
+    except Exception as e:
+        return False, f"Error validating font template: {str(e)}"
+
+
 def set_font(font_name: str, *theme_names: str, all_themes: bool = False) -> None:
     """
     Apply a font template to one or more themes.
@@ -70,6 +111,12 @@ def set_font(font_name: str, *theme_names: str, all_themes: bool = False) -> Non
     except FileNotFoundError:
         return
 
+    # Validate font template structure
+    is_valid, error_message = validate_font_template(font_path)
+    if not is_valid:
+        print(f"Error: {error_message}")
+        return
+
     # Read font template
     with open(font_path, encoding="utf-8") as f:
         font_content = f.read()
@@ -85,7 +132,8 @@ def set_font(font_name: str, *theme_names: str, all_themes: bool = False) -> Non
         themes_to_update = list(theme_names)
 
     # Regular expression pattern to match the font section
-    font_section_pattern = r":root\s*\{\s*--monospace-font:.*?\}"
+    # Updated pattern to handle Google Fonts imports between comment and root declaration
+    font_section_pattern = r"/\* Font and Radius Variables \*/.*?:root\s*\{[^}]*\}"
 
     updated_themes = []
     failed_themes = []
@@ -101,7 +149,7 @@ def set_font(font_name: str, *theme_names: str, all_themes: bool = False) -> Non
             # Check if theme has a font section
             if not re.search(font_section_pattern, theme_content, re.DOTALL):
                 print(
-                    f"Warning: Theme '{theme_name}' doesn't have a font section to replace."
+                    f"Warning: Theme '{theme_name}' doesn't have a properly formatted font section to replace."
                 )
                 failed_themes.append(theme_name)
                 continue
@@ -141,3 +189,31 @@ def list_fonts() -> list[str]:
         return []
 
     return sorted([font.stem for font in fonts_dir.glob("*.css")])
+
+
+def validate_font(font_name: str) -> bool:
+    """
+    Validate if a font template has the correct structure.
+    
+    Args:
+        font_name: Name of the font template to validate
+        
+    Returns:
+        bool: True if validation succeeded, False otherwise
+    """
+    fonts_dir = get_fonts_dir()
+    
+    try:
+        font_path = validate_font_exists(font_name, fonts_dir)
+    except FileNotFoundError:
+        print(f"Error: Font template '{font_name}' not found.")
+        return False
+        
+    is_valid, error_message = validate_font_template(font_path)
+    
+    if is_valid:
+        print(f"Font template '{font_name}' is valid.")
+        return True
+    else:
+        print(f"Font template '{font_name}' is invalid: {error_message}")
+        return False

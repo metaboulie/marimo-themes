@@ -13,6 +13,7 @@ from motheme.operations import (
     list_theme,
     remove_theme_files,
     set_font,
+    validate_font,
 )
 from motheme.utils import (
     check_files_provided,
@@ -372,7 +373,7 @@ def font__create(
 
 
 @arguably.command
-def font__list() -> None:
+def font__ls() -> None:
     """List available font templates."""
     fonts = list_fonts()
     if not fonts:
@@ -382,6 +383,17 @@ def font__list() -> None:
     print("Available font templates:")
     for font in fonts:
         print(f"- {font}")
+
+
+@arguably.command
+def font__validate(font_name: str) -> None:
+    """
+    Validate a font template structure.
+
+    Args:
+        font_name: Name of the font template to validate
+    """
+    validate_font(font_name)
 
 
 def main() -> None:

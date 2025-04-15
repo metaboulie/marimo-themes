@@ -4,7 +4,7 @@ from .apply_theme import apply_theme
 from .clear_theme import clear_theme
 from .create_theme import create_theme
 from .current_theme import current_theme
-from .font import create_font, list_fonts, set_font
+from .font import create_font, list_fonts, set_font, validate_font
 from .list_theme import list_theme
 from .remove_theme import remove_theme_files
 
@@ -18,4 +18,5 @@ __all__ = [
     "list_theme",
     "remove_theme_files",
     "set_font",
+    "validate_font",
 ]
