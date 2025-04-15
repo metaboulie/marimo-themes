@@ -22,6 +22,8 @@ from motheme.utils import (
 @arguably.command
 def update() -> None:
     """Update Marimo themes from GitHub repository."""
+    print("\033[93mWARNING: The 'update' command is deprecated and will be removed in v0.4.0. "
+          "Use 'motheme download --all' instead.\033[0m")
     download_themes()
 
 
