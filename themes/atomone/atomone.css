@@ -1,0 +1,78 @@
+/* Atomone color scheme inspired by Atom One Light/Dark themes */
+
+/* Font and Radius Variables */
+:root {
+    --monospace-font: var(--marimo-monospace-font, "Fira Mono", monospace);
+    --text-font: var(--marimo-text-font, "PT Sans", sans-serif);
+    --heading-font: var(--marimo-heading-font, "Lora", serif);
+    --radius: 8px;
+}
+
+/* Atomone color palette */
+:root {
+    /* Base Colors */
+    --atom-syntax-bg-dark: hsl(220, 13%, 18%); /* dark bg */
+    --atom-ui-bg-dark: hsl(220, 13%, 18%); /* dark bg highlights */
+    --atom-text-dark: hsl(220, 14%, 71%); /* dark content */
+    --atom-subtle-dark: hsl(220, 10%, 55%); /* dark content */
+    --atom-text-light: hsl(230, 8%, 24%); /* light content */
+    --atom-subtle-light: hsl(230, 6%, 44%); /* light content */
+    --atom-ui-bg-light: hsl(230, 11%, 93%); /* light bg highlights */
+    --atom-syntax-bg-light: hsl(0, 0%, 98%); /* light bg */
+
+    /* Accent Colors */
+    --atom-red: hsl(355, 65%, 65%);
+    --atom-orange: hsl(29, 54%, 61%);
+    --atom-yellow: hsl(39, 67%, 69%);
+    --atom-green: hsl(95, 38%, 62%);
+    --atom-cyan: hsl(187, 47%, 55%);
+    --atom-blue: hsl(207, 82%, 66%);
+    --atom-purple: hsl(286, 60%, 67%);
+}
+
+/* Base colors with light-dark variants */
+:root {
+    --background: light-dark(var(--atom-syntax-bg-light), var(--atom-syntax-bg-dark));
+    --foreground: light-dark(var(--atom-text-light), var(--atom-text-dark));
+    --muted: light-dark(var(--atom-ui-bg-light), var(--atom-ui-bg-dark));
+    --muted-foreground: light-dark(var(--atom-subtle-light), var(--atom-subtle-dark));
+    --popover: light-dark(var(--atom-syntax-bg-light), var(--atom-syntax-bg-dark));
+    --popover-foreground: light-dark(var(--atom-text-light), var(--atom-text-dark));
+    --card: light-dark(var(--atom-syntax-bg-light), var(--atom-syntax-bg-dark));
+    --card-foreground: light-dark(var(--atom-text-light), var(--atom-text-dark));
+    --border: light-dark(var(--atom-ui-bg-light), var(--atom-ui-bg-dark));
+    --input: light-dark(var(--atom-subtle-light), var(--atom-subtle-dark));
+    --primary: light-dark(var(--atom-blue), var(--atom-blue));
+    --primary-foreground: light-dark(var(--atom-syntax-bg-light), var(--atom-syntax-bg-dark));
+    --secondary: light-dark(var(--atom-ui-bg-light), var(--atom-ui-bg-dark));
+    --secondary-foreground: light-dark(var(--atom-text-light), var(--atom-syntax-bg-dark));
+    --accent: light-dark(var(--atom-purple), var(--atom-purple));
+    --accent-foreground: light-dark(var(--atom-syntax-bg-dark), var(--atom-syntax-bg-light));
+    --ring: var(--atom-blue);
+}
+
+/* Semantic colors */
+:root {
+    --destructive: var(--atom-red);
+    --destructive-foreground: light-dark(var(--atom-syntax-bg-light), var(--atom-syntax-bg-dark));
+    --error: var(--atom-red);
+    --error-foreground: light-dark(var(--atom-syntax-bg-light), var(--atom-syntax-bg-dark));
+    --success: var(--atom-green);
+    --success-foreground: light-dark(var(--atom-syntax-bg-light), var(--atom-syntax-bg-dark));
+    --action: var(--atom-yellow);
+    --action-hover: light-dark(hsl(39, 67%, 75%), hsl(39, 67%, 60%));
+    --action-foreground: light-dark(var(--atom-syntax-bg-dark), var(--atom-syntax-bg-dark));
+    --link: light-dark(var(--atom-blue), var(--atom-blue));
+    --link-visited: light-dark(var(--atom-purple), var(--atom-purple));
+    --stale: hsl(39, 67%, 69% / 25%);
+}
+
+/* Base shadows */
+:root {
+    --base-shadow: light-dark(hsla(230, 11%, 50% / 40%), hsla(220, 13% 25% / 60%));
+    --base-shadow-darker: light-dark(
+        hsla(230, 11%, 40% / 40%),
+        hsla(220, 13% 35% / 60%)
+    );
+    --base-shadow-opacity: 5%;
+} 
