@@ -12,6 +12,7 @@ from motheme.operations import (
 )
 from motheme.utils import (
     check_files_provided,
+    download_specific_themes,
     download_themes,
     expand_files,
     quiet_mode,
@@ -28,6 +29,38 @@ def update() -> None:
 def themes() -> None:
     """List available Marimo themes."""
     list_theme()
+
+
+@arguably.command
+def download(
+    *theme_names: str,
+    all_themes: bool = False,
+) -> None:
+    """
+    Download specific Marimo themes.
+
+    Args:
+        theme_names: Names of themes to download
+        all_themes: [-a/--all] If True, download all available themes
+    """
+    if all_themes:
+        print("Downloading all available themes...")
+        download_themes()
+        return
+
+    if not theme_names:
+        print("Error: Please specify at least one theme name to download or use --all.")
+        print("       Run 'mtheme themes' to see available themes.")
+        return
+
+    print(f"Downloading themes: {', '.join(theme_names)}")
+    downloaded, not_found = download_specific_themes(list(theme_names))
+
+    if downloaded:
+        print(f"Successfully downloaded: {', '.join(downloaded)}")
+    if not_found:
+        print(f"Themes not found or failed to download: {', '.join(not_found)}")
+        print("Run 'mtheme themes' to see available themes.")
 
 
 @arguably.command
