@@ -35,6 +35,8 @@ def update() -> None:
 @arguably.command
 def themes() -> None:
     """List available Marimo themes."""
+    print("\033[93mWARNING: The 'themes' command is deprecated and will be removed in v0.4.0. "
+          "Use 'motheme ls' instead.\033[0m")
     list_theme()
 
 
